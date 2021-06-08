@@ -1,7 +1,9 @@
 import './App.css';
-import { CardComponent } from "./components/Card";
-import { NavBar } from './components/Navbar/navbar';
+import { CardComponent } from "./components/card";
+import { NavBar } from './components/navbar';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import 'bootstrap/dist/js/bootstrap.min.js';
+import { Carrousel } from './components/carrousel';
 
 
 function App() {
@@ -19,6 +21,8 @@ function App() {
         </a>
         <CardComponent />
       </header>
+
+      <Carrousel />
     </div>
   );
 }
