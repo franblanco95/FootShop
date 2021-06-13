@@ -1,5 +1,3 @@
-import React from 'react'
-
 export const Carrousel = () => {
     return (
         <div>
@@ -27,4 +25,3 @@ export const Carrousel = () => {
         </div>
     )
 }
-
