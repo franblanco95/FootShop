@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 
-export const CounterComponent = ({stock}) => {
+export const CounterComponent = ({ stock }) => {
     const [counter, setCounter] = useState(1)
 
     const sumar = () => {
@@ -25,13 +25,10 @@ export const CounterComponent = ({stock}) => {
     }
 
     return (
-
-            <>
+        <div>
             <button onClick={restar}>-</button>
             <input type="number" value={counter} onChange={manualChange} />
             <button onClick={sumar}>+</button>
-
-            </>
-
+        </div>
     )
 }

@@ -1,19 +1,26 @@
 import './styles.css'
 import { CounterComponent } from '../../components/CounterComponent';
+import { Card, Button } from 'react-bootstrap';
 
-export const CardComponent = ({name, price, stock}) => {
+export const CardComponent = ({ name, price, img, stock }) => {
+
     function saludar() {
         alert("Se agrego al carrito con exito!");
     }
 
     return (
-        <div className="card">
-            <h2>{name}</h2>
-            <img src="{img}" alt="imagen" />
-            <strong>{price}</strong>
-            <CounterComponent stock={stock} />
-            <button className="btn btn-primary" onClick={saludar}>Agregar al carrito</button>
-        </div>
+        <>
+            <Card style={{ width: '18rem' }}>
+                <Card.Img className="imagen" variant="top" src={img}/>
+                <Card.Body>
+                    <Card.Title>{name}</Card.Title>
+                    <Card.Text> {price}
+                    </Card.Text>
+                    <Button variant="primary" onClick={saludar}>Agregar al Carrito</Button>
+                    <CounterComponent stock={stock} />
+                </Card.Body>
+            </Card>
+        </>
     )
 }
 

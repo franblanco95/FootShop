@@ -1,24 +1,25 @@
 import { CardComponent } from '../../components/CardComponent';
+import { Container, Row, Col } from 'react-bootstrap';
 
 export const HomeContainer = (props) => {
     return (
 
         <section>
-            <header className="App-header">
-                <div className="row">
+            <Container fluid="md">
+                <Row>
                     {props.productData.map((product) => {
                         return (
-                            <div className="col-3">
+                            <Col>
                                 <CardComponent
                                     name={product.name}
                                     img={product.img}
                                     price={product.price}
                                     stock={product.stock} />
-                            </div>
+                            </Col>
                         )
                     })}
-                </div>
-            </header>
+                </Row>
+            </Container>
         </section>
 
     )

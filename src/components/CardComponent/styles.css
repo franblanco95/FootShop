@@ -1,11 +1,5 @@
-.card {
-    background-color: #c7c2d1;
-    color: black;
-    width: 10vw;
-    height: 20vh;
-}
-
-.card{
-    text-align: center;
+.imagen {
+    width: 250px;
+    height: 250px;
 }
 
