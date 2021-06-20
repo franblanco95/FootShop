@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { Button, InputGroup, FormControl } from 'react-bootstrap';
 
 export const CounterComponent = ({ stock }) => {
     const [counter, setCounter] = useState(1)
@@ -26,9 +27,11 @@ export const CounterComponent = ({ stock }) => {
 
     return (
         <div>
-            <button onClick={restar}>-</button>
-            <input type="number" value={counter} onChange={manualChange} />
-            <button onClick={sumar}>+</button>
+            <InputGroup className="mb-3 w-75 align-items-center">
+                <Button onClick={restar}>-</Button>
+                <FormControl type="number" value={counter} onChange={manualChange}/>
+                <Button onClick={sumar}>+</Button>
+            </InputGroup>
         </div>
     )
 }

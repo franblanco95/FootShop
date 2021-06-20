@@ -1,26 +1,51 @@
 import { CartComponent } from '../../components/CartComponent';
+import { Navbar, Nav, NavDropdown, Form, FormControl, Button } from 'react-bootstrap'
+import React from 'react'
+
+
 
 export const NavBar = () => {
     return (
-        <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
-            <div className="container-fluid px-5">
-                <img class="display-2" width="40" height="30" src="./imagenes/logo.png" alt="logo" />
+        <div>
+            <Navbar bg="dark" variant="dark" expand="lg">
 
-                <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-                    <span className="navbar-toggler-icon"></span>
-                </button>
+                <Navbar.Brand href="#">
+                    <img className="mx-3" width={40} height={30} src="./imagenes/logo.png" alt="logo" />
+                    E-Commerce
+                </Navbar.Brand>
 
-                <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
-                    <div className="navbar-nav ms-auto">
-                        <a className="nav-link active" aria-current="page" href="#">Inicio</a>
-                        <a className="nav-link">Categorias</a>
-                        <a className="nav-link">Ofertas</a>
-                        <a className="nav-link">Historial</a>
-                        <a className="nav-link">Ayuda</a>
-                        <a className="nav-link"><CartComponent /></a>
-                    </div>
-                </div>
-            </div>
-        </nav>
+                <Navbar.Toggle aria-controls="navbarScroll" />
+                <Navbar.Collapse id="navbarScroll">
+
+                    <Nav
+                        className="mx-auto my-2 my-lg-0"
+                        style={{ maxHeight: '100px' }}
+                        navbarScroll
+                    >
+                        <Nav.Link href="#action1">Inicio</Nav.Link>
+                        <NavDropdown title="Categorias" id="navbarScrollingDropdown">
+                            <NavDropdown.Item href="#action3">Zapatillas</NavDropdown.Item>
+                            <NavDropdown.Item href="#action4">Remeras</NavDropdown.Item>
+                            <NavDropdown.Item href="#action5">Camisas</NavDropdown.Item>
+                        </NavDropdown>
+                        <Nav.Link href="#action2">Ofertas</Nav.Link>
+                        <Nav.Link href="#">Ayuda</Nav.Link>
+                        <Nav.Link href="#"><CartComponent /></Nav.Link>
+
+                    </Nav>
+
+                    <Form className="d-flex me-3">
+                        <FormControl
+                            type="search"
+                            placeholder="Buscar productos"
+                            className="me-3"
+                            aria-label="Search"
+                        />
+                        <Button variant="outline-warning">Buscar</Button>
+                    </Form>
+                </Navbar.Collapse>
+            </Navbar>
+
+        </div>
     )
 }
