@@ -5,10 +5,10 @@ import { Col } from 'react-bootstrap'
 export function ItemList({ productos }) {
     return (
         <>
-            {productos.map(productos => {
+            {productos.map(producto => {
                 return (
                     <Col>
-                        <CardComponent productos={productos} key={productos.id} />
+                        <CardComponent productos={producto} key={producto.id} />
                     </Col >
                 )
             })}

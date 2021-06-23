@@ -10,7 +10,7 @@ export const CardComponent = ({ productos }) => {
 
     return (
         <>
-            <Card className="align-items-center" style={{ width: '18rem' }}>
+            <Card className="align-items-center mx-auto" style={{ width: '18rem' }}>
                 <Card.Img className="imagen" variant="top" src={productos.img}/>
                 <Card.Body>
                     <Card.Title>{productos.name}</Card.Title>

@@ -26,12 +26,12 @@ export const CounterComponent = ({ stock }) => {
     }
 
     return (
-        <div>
-            <InputGroup className="mb-3 w-75 align-items-center">
+        <>
+            <InputGroup className="mb-3">
                 <Button onClick={restar}>-</Button>
-                <FormControl type="number" value={counter} onChange={manualChange}/>
+                <FormControl type="number" value={counter} onChange={manualChange} />
                 <Button onClick={sumar}>+</Button>
             </InputGroup>
-        </div>
+        </>
     )
 }
