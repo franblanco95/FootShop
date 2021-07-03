@@ -12,7 +12,7 @@ export const ItemDetail = ({ productos }) => {
     return (
         <>
             <Col>
-                <img src={productos.pictures[0].url} alt="foto" />
+                <img src={productos.thumbnail} alt="foto" />
             </Col>
             <Col>
                 <p>{productos.title}</p>

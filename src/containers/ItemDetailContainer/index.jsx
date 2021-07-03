@@ -14,20 +14,20 @@ export const ItemDetailContainer = () => {
             console.log(result)
             setTimeout(() => {
                 setProducto(result)
-            }, 4000);
+            }, 2000);
 
         }
         waitForData();
     }, [])
 
     return (
-        <section>
+        <section section >
             <Container className="fondo" fluid="md">
                 <Row className="text-center py-5">
                     <ItemDetail productos={producto} />
                 </Row>
             </Container>
-        </section>
+        </section >
 
     )
 }

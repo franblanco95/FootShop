@@ -2,17 +2,25 @@ import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.min.js';
 
+import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import { NavBar } from './components/NavbarComponent';
-// import { HomeContainer } from './containers/HomeContainer';
+import { HomeContainer } from './containers/HomeContainer';
 import { ItemDetailContainer } from './containers/ItemDetailContainer';
 
 function App() {
 
   return (
     <>
-      <NavBar />
-      {/* <HomeContainer /> */}
-      <ItemDetailContainer />
+
+      <BrowserRouter BrowserRouter >
+        <NavBar />
+        <Switch>
+          <Route exact path="/" component={HomeContainer} />
+          <Route path="/contact" component={ItemDetailContainer} />
+          <Route path="/prueba" component={() => <h1>Esta página no existe</h1>} />
+        </Switch>
+
+      </BrowserRouter>
     </>
   );
 }

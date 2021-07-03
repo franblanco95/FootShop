@@ -1,5 +1,6 @@
 import { CartComponent } from '../../components/CartComponent';
-import { Navbar, Nav, NavDropdown, Form, FormControl, Button } from 'react-bootstrap'
+import { Navbar, Nav, NavDropdown, Form, FormControl, Button } from 'react-bootstrap';
+import { Link, NavLink } from 'react-router-dom';
 import React from 'react'
 
 
@@ -9,9 +10,11 @@ export const NavBar = () => {
         <div>
             <Navbar bg="dark" variant="dark" expand="lg">
 
-                <Navbar.Brand href="#">
-                    <img className="mx-3" width={40} height={30} src="./imagenes/logo.png" alt="logo" />
-                    E-Commerce
+                <Navbar.Brand>
+                    <Link to={'/'}>
+                        <img className="mx-3" width={40} height={30} src="./imagenes/logo.png" alt="logo" /></Link>
+                    fran-store
+
                 </Navbar.Brand>
 
                 <Navbar.Toggle aria-controls="navbarScroll" />
@@ -22,15 +25,22 @@ export const NavBar = () => {
                         style={{ maxHeight: '100px' }}
                         navbarScroll
                     >
-                        <Nav.Link href="#action1">Inicio</Nav.Link>
+                        <Nav.Link as={NavLink} activeClassName="active" to="/">
+                            Inicio</Nav.Link>
+
                         <NavDropdown title="Categorias" id="navbarScrollingDropdown">
                             <NavDropdown.Item href="#action3">Zapatillas</NavDropdown.Item>
                             <NavDropdown.Item href="#action4">Remeras</NavDropdown.Item>
                             <NavDropdown.Item href="#action5">Camisas</NavDropdown.Item>
                         </NavDropdown>
-                        <Nav.Link href="#action2">Ofertas</Nav.Link>
-                        <Nav.Link href="#">Ayuda</Nav.Link>
-                        <Nav.Link href="#"><CartComponent /></Nav.Link>
+                        
+                        <Nav.Link as={NavLink} activeClassName="active" to="/contact">
+                            Ofertas</Nav.Link>
+
+                        <Nav.Link as={NavLink} activeClassName="active" to="/prueba">
+                            Ayuda</Nav.Link>
+
+                        <Nav.Link><CartComponent /></Nav.Link>
 
                     </Nav>
 
