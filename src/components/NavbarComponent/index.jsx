@@ -28,19 +28,18 @@ export const NavBar = () => {
                         <Nav.Link as={NavLink} activeClassName="active" to="/">
                             Inicio</Nav.Link>
 
-                        <NavDropdown title="Categorias" id="navbarScrollingDropdown">
-                            <NavDropdown.Item href="#action3">Zapatillas</NavDropdown.Item>
-                            <NavDropdown.Item href="#action4">Remeras</NavDropdown.Item>
-                            <NavDropdown.Item href="#action5">Camisas</NavDropdown.Item>
-                        </NavDropdown>
-                        
                         <Nav.Link as={NavLink} activeClassName="active" to="/category/Remeras">
                             Remeras</Nav.Link>
 
                         <Nav.Link as={NavLink} activeClassName="active" to="/category/Zapatillas">
                             Zapatilla</Nav.Link>
 
-                        <Nav.Link><CartComponent /></Nav.Link>
+                        <Nav.Link as={NavLink} activeClassName="active" to="/category/Buzos">
+                            Buzos</Nav.Link>
+
+                        <Nav.Link>
+                            <CartComponent />
+                        </Nav.Link>
 
                     </Nav>
 

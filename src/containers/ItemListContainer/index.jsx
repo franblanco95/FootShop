@@ -7,8 +7,8 @@ import { getDataML } from '../../utils/const'
 
 export const ItemListContainer = () => {
 
-    let [productos, setProductos] = useState([]);
-    let { categoryId } = useParams()
+    const [productos, setProductos] = useState([]);
+    const { categoryId } = useParams()
 
     useEffect(() => {
         const waitForData = async () => {
@@ -16,7 +16,7 @@ export const ItemListContainer = () => {
             setTimeout(() => {
                 let aux = response.map((element) => {
                     return {
-                        idProd: element.id,
+                        id: element.id,
                         img: element.thumbnail,
                         title: element.title,
                         price: element.price,
@@ -26,16 +26,12 @@ export const ItemListContainer = () => {
             }, 2000)
 
         }
+        setProductos([]);
         waitForData();
     }, [categoryId]);
 
     return (
         <>
-            {/* {if (productos.length > 0)
-            <ItemList productos={productos} />
-            }
-            <Spinner /> */}
-
             {productos.length > 0 ? <ItemList productosList={productos} categoria={categoryId}></ItemList> :
                 <Cargando></Cargando>}
 

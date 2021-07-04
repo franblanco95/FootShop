@@ -1,9 +1,9 @@
 import React from 'react'
-import { Col, Button } from 'react-bootstrap';
+import { Container, Row, Col, Button } from 'react-bootstrap';
 import { CounterComponent } from '../../components/CounterComponent';
 
 
-export const ItemDetail = ({ productos }) => {
+export const ItemDetail = ({ img, title, price }) => {
 
     function saludar() {
         alert("Se agrego al carrito con exito!");
@@ -11,15 +11,19 @@ export const ItemDetail = ({ productos }) => {
 
     return (
         <>
-            <Col>
-                <img src={productos.thumbnail} alt="foto" />
-            </Col>
-            <Col>
-                <p>{productos.title}</p>
-                <p>Precio: $ {productos.price}</p>
-                <CounterComponent />
-                <Button variant="primary" onClick={saludar}>Agregar al Carrito</Button>
-            </Col>
+            <Container>
+                <Row>
+                    <Col>
+                        <img src={img} alt="foto" />
+                    </Col>
+                    <Col>
+                        <p>{title}</p>
+                        <p>Precio: $ {price}</p>
+                        <CounterComponent />
+                        <Button variant="primary" onClick={saludar}>Agregar al Carrito</Button>
+                    </Col>
+                </Row>
+            </Container>
         </>
     )
 }

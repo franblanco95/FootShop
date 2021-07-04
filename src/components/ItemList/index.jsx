@@ -11,7 +11,7 @@ export function ItemList({ productosList, categoria }) {
                     {productosList.map((element, index) => {
                         return (
                             <Col key={index}>
-                                <CardComponent img={element.img} title={element.title} price={element.price} />
+                                <CardComponent img={element.img} title={element.title} price={element.price} id={element.id}/>
                             </Col >
                         )
                     })}

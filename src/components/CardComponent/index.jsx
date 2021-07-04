@@ -1,8 +1,9 @@
 import './styles.css'
 import { CounterComponent } from '../../components/CounterComponent';
 import { Card, Button } from 'react-bootstrap';
+import { Link } from 'react-router-dom'
 
-export const CardComponent = ({ img, title, price }) => {
+export const CardComponent = ({ img, title, price, id }) => {
 
     function saludar() {
         alert("Se agrego al carrito con exito!");
@@ -19,6 +20,8 @@ export const CardComponent = ({ img, title, price }) => {
                     {/* <CounterComponent stock={} /> */}
                     <br></br>
                     <Button variant="primary" onClick={saludar}>Agregar al Carrito</Button>
+                    <Button variant="warning" as={Link} to={`/item/${id}`}>Detalle</Button>
+
                 </Card.Body>
             </Card>
         </>
