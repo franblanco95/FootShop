@@ -18,7 +18,7 @@ function App() {
         <Switch>
           <Route exact path="/" component={HomeContainer} />
           <Route path="/category/:categoryId" component={ItemListContainer} />
-          <Route path="/contact" component={ItemDetailContainer} />
+          <Route path="/item/:id" component={ItemDetailContainer}/>
           <Route path="/prueba" component={() => <h1>Esta página no existe</h1>} />
         </Switch>
 

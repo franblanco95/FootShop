@@ -34,11 +34,11 @@ export const NavBar = () => {
                             <NavDropdown.Item href="#action5">Camisas</NavDropdown.Item>
                         </NavDropdown>
                         
-                        <Nav.Link as={NavLink} activeClassName="active" to="/contact">
-                            Ofertas</Nav.Link>
+                        <Nav.Link as={NavLink} activeClassName="active" to="/category/Remeras">
+                            Remeras</Nav.Link>
 
-                        <Nav.Link as={NavLink} activeClassName="active" to="/prueba">
-                            Ayuda</Nav.Link>
+                        <Nav.Link as={NavLink} activeClassName="active" to="/category/Zapatillas">
+                            Zapatilla</Nav.Link>
 
                         <Nav.Link><CartComponent /></Nav.Link>
 

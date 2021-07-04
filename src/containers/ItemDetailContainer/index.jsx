@@ -17,6 +17,7 @@ export const ItemDetailContainer = () => {
             }, 2000);
 
         }
+
         waitForData();
     }, [])
 

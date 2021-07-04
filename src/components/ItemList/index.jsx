@@ -1,17 +1,22 @@
 import React from 'react'
 import { CardComponent } from "../CardComponent"
-import { Col } from 'react-bootstrap'
+import { Col, Container, Row } from 'react-bootstrap'
 
-export function ItemList({ productos }) {
+export function ItemList({ productosList, categoria }) {
     return (
         <>
-            {productos.map(producto => {
-                return (
-                    <Col>
-                        <CardComponent productos={producto} key={producto.id} />
-                    </Col >
-                )
-            })}
+            <Container>
+            <h1>Estas en la parte de {categoria}</h1>
+                <Row>
+                    {productosList.map((element, index) => {
+                        return (
+                            <Col key={index}>
+                                <CardComponent img={element.img} title={element.title} price={element.price} />
+                            </Col >
+                        )
+                    })}
+                </Row>
+            </Container>
         </>
     )
 }
