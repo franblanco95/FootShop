@@ -1,26 +1,12 @@
 import { Container, Row } from 'react-bootstrap';
-import './styles.css'
-import { useEffect, useState } from 'react'
-import { ItemList } from '../../components/ItemList';
 
 export const HomeContainer = () => {
-
-    let [productos, setProductos] = useState([]);
-
-    useEffect(() => {
-        const waitForData = async () => {
-            const response = await fetch("./json/product.json")
-            const result = await response.json()
-            setProductos(result)
-        }
-        waitForData();
-    }, [])
 
     return (
         <section>
             <Container className="fondo" fluid="md">
                 <Row className="text-center py-5">
-                    <ItemList productos={productos} />
+                    <h1>Hola Este es el E-Commerce de Fran</h1>
                 </Row>
             </Container>
         </section>
