@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { Button, InputGroup, FormControl } from 'react-bootstrap';
 
-export const CounterComponent = ({ stock }) => {
+export const CounterComponent = ({ stock, onAdd }) => {
     const [counter, setCounter] = useState(1)
 
     const sumar = () => {
@@ -32,6 +32,7 @@ export const CounterComponent = ({ stock }) => {
                 <FormControl type="number" value={counter} onChange={manualChange} />
                 <Button onClick={sumar}>+</Button>
             </InputGroup>
+            <Button onClick={() => onAdd(counter)} variant="primary">Agregar al Carrito</Button>
         </>
     )
 }

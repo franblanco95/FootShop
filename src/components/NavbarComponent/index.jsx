@@ -1,5 +1,5 @@
-import { CartComponent } from '../../components/CartComponent';
-import { Navbar, Nav, NavDropdown, Form, FormControl, Button } from 'react-bootstrap';
+import { CartIcon } from '../../components/CartIcon';
+import { Navbar, Nav, Form, FormControl, Button } from 'react-bootstrap';
 import { Link, NavLink } from 'react-router-dom';
 import './styles.css'
 import React from 'react'
@@ -59,7 +59,7 @@ export const NavBar = () => {
                         </Nav.Link>
 
                         <Nav.Link>
-                            <CartComponent />
+                            <CartIcon />
                         </Nav.Link>
 
                     </Nav>
