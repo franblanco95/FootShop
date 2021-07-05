@@ -7,6 +7,7 @@ import { NavBar } from './components/NavbarComponent';
 import { HomeContainer } from './containers/HomeContainer'
 import { ItemListContainer } from './containers/ItemListContainer';
 import { ItemDetailContainer } from './containers/ItemDetailContainer';
+import { Error404 } from './components/404'
 
 function App() {
 
@@ -18,8 +19,8 @@ function App() {
         <Switch>
           <Route exact path="/" component={HomeContainer} />
           <Route path="/category/:categoryId" component={ItemListContainer} />
-          <Route path="/item/:id" component={ItemDetailContainer}/>
-          <Route path="/prueba" component={() => <h1>Esta página no existe</h1>} />
+          <Route path="/item/:id" component={ItemDetailContainer} />
+          <Route path="*" component={Error404} />
         </Switch>
 
       </BrowserRouter>
