@@ -32,7 +32,7 @@ export const NavBar = () => {
                             Remeras</Nav.Link>
 
                         <Nav.Link as={NavLink} activeClassName="active" to="/category/Zapatillas">
-                            Zapatilla</Nav.Link>
+                            Zapatillas</Nav.Link>
 
                         <Nav.Link as={NavLink} activeClassName="active" to="/category/Buzos">
                             Buzos</Nav.Link>

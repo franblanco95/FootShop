@@ -1,11 +1,14 @@
 import React from 'react'
-import { Spinner, Container } from 'react-bootstrap'
+import { Spinner, Container, Row } from 'react-bootstrap'
 
 export const Cargando = () => {
     return (
         <>
-            <Container>
-                <Spinner animation="border" role="status"></Spinner>
+            <Container className="fondo" fluid="md">
+                <Row className="text-center py-5 align-items-center">
+                    <h3>Cargando</h3>
+                    <Spinner className="m-auto" animation="border" role="status"></Spinner>
+                </Row>
             </Container>
         </>
     )

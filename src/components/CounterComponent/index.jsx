@@ -5,7 +5,7 @@ export const CounterComponent = ({ stock }) => {
     const [counter, setCounter] = useState(1)
 
     const sumar = () => {
-        if (counter < stock) {
+        if (counter < stock.stock) {
             setCounter(counter + 1)
         }
     }
@@ -18,8 +18,8 @@ export const CounterComponent = ({ stock }) => {
 
     const manualChange = (e) => {
         let value = e.target.value
-        if (value > stock) {
-            setCounter(stock)
+        if (value > stock.stock) {
+            setCounter(stock.stock)
         } else {
             setCounter(value)
         }

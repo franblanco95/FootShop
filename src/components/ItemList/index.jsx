@@ -1,12 +1,13 @@
 import React from 'react'
+import './styles.css'
 import { CardComponent } from "../CardComponent"
 import { Col, Container, Row } from 'react-bootstrap'
 
 export function ItemList({ productosList, categoria }) {
     return (
         <>
-            <Container>
-            <h1>Estas en la parte de {categoria}</h1>
+            <Container className="fondito p-5">
+            <h2>Categoría: {categoria}</h2>
                 <Row>
                     {productosList.map((element, index) => {
                         return (
