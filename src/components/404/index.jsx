@@ -1,5 +1,5 @@
 import React from 'react'
-import './styles.css'
+import './404.css'
 import { Container, Row } from 'react-bootstrap'
 
 export const Error404 = () => {
