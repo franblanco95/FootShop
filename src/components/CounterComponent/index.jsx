@@ -3,7 +3,7 @@ import { Button, InputGroup, FormControl } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import { CartContext } from '../../context/cartContext'
 
-export const CounterComponent = ({ stock, title, price }) => {
+export const CounterComponent = ({ stock, title, price, id }) => {
 
     const cartContext = useContext(CartContext)
 
@@ -16,6 +16,7 @@ export const CounterComponent = ({ stock, title, price }) => {
             quantity: counter
         }
         console.log(aux)
+        // preguntar si el id de ese objeto ya se encuentra en el carrito
         cartContext.addItem(aux)
 
     }

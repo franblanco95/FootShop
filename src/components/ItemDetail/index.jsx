@@ -4,7 +4,7 @@ import { Container, Row, Col, Card } from 'react-bootstrap';
 import { CounterComponent } from '../../components/CounterComponent';
 
 
-export const ItemDetail = ({ img, title, price }) => {
+export const ItemDetail = ({ img, title, price, id }) => {
 
     const prueba = {
         stock: 10
@@ -25,7 +25,7 @@ export const ItemDetail = ({ img, title, price }) => {
                             <p className="precio">Precio: $ {price}</p>
                             {prueba.stock > 0 ? <p> Stock: {prueba.stock} </p> : <p>No hay stock</p>}
                             
-                            <CounterComponent stock={prueba} title={title} price={price} />
+                            <CounterComponent stock={prueba} title={title} price={price} id={id}/>
                         </Col>
                     </Row>
                 </Card>
