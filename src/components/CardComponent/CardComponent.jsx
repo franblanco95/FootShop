@@ -1,4 +1,4 @@
-import './styles.css'
+import './CardComponent.css'
 import { Card, Button } from 'react-bootstrap';
 import { Link } from 'react-router-dom'
 

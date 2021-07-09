@@ -1,4 +1,5 @@
 import React, { useState, useContext } from 'react'
+import './CounterComponent.css'
 import { Button, InputGroup, FormControl } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import { CartContext } from '../../context/cartContext'

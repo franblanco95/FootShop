@@ -3,13 +3,13 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.min.js';
 
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
-import { NavBar } from './components/NavbarComponent';
-import { HomeContainer } from './containers/HomeContainer'
-import { ItemListContainer } from './containers/ItemListContainer';
-import { ItemDetailContainer } from './containers/ItemDetailContainer';
-import { Cart } from './components/Cart';
-import { Error404 } from './components/404'
+import { NavBar } from './components/NavbarComponent/NavbarComponent';
+import { ItemListContainer } from './containers/ItemListContainer/ItemListContainer';
+import { ItemDetailContainer } from './containers/ItemDetailContainer/ItemDetailContainer';
+import { Cart } from './components/Cart/Cart';
+import { Error404 } from './components/404/Error404'
 import { CartComponentContext } from './context/cartContext';
+import { HomeContainer } from './containers/HomeContainer/HomeContainer';
 
 function App() {
 

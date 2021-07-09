@@ -1,7 +1,7 @@
-import './styles.css'
-import { Cargando } from '../../components/Spiner';
+import './ItemListContainer.css'
+import { Cargando } from '../../components/Spiner/Spiner';
 import { useEffect, useState } from 'react'
-import { ItemList } from '../../containers/ItemList';
+import { ItemList } from '../ItemList/ItemList';
 import { useParams } from 'react-router-dom';
 import { getDataML } from '../../utils/const'
 
@@ -33,7 +33,7 @@ export const ItemListContainer = () => {
     return (
         <>
             {productos.length > 0 ? <ItemList productosList={productos} categoria={categoryId}></ItemList> :
-                <Cargando></Cargando>}
+                <Cargando/>}
 
 
         </>

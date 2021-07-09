@@ -1,11 +1,7 @@
 import { Container, Row } from 'react-bootstrap';
-import { useContext } from 'react';
-import { CartContext } from '../../context/cartContext'
-import './styles.css'
+import './HomeContainer.css';
 
 export const HomeContainer = () => {
-    const estadoGlobal = useContext(CartContext)
-    console.log(estadoGlobal)
 
     return (
         <section>
@@ -18,3 +14,4 @@ export const HomeContainer = () => {
 
     )
 }
+

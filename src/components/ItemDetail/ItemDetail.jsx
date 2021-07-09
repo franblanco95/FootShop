@@ -1,7 +1,7 @@
 import React from 'react'
-import './styles.css'
+import './ItemDetail.css'
 import { Container, Row, Col, Card } from 'react-bootstrap';
-import { CounterComponent } from '../../components/CounterComponent';
+import { CounterComponent } from '../CounterComponent/CounterComponent';
 
 
 export const ItemDetail = ({ img, title, price, id }) => {

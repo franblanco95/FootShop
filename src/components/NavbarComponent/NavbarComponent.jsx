@@ -1,12 +1,9 @@
-import { CartIcon } from '../../components/CartIcon';
+import { CartIcon } from '../CartIcon/CartIcon';
 import { Navbar, Nav } from 'react-bootstrap';
 import { Link, NavLink } from 'react-router-dom';
-import './styles.css'
+import './NavbarComponent.css'
 import { React, useContext } from 'react'
 import { CartContext } from '../../context/cartContext'
-
-
-
 
 export const NavBar = () => {
     const { carrito } = useContext(CartContext)
@@ -19,7 +16,7 @@ export const NavBar = () => {
                     to="/">
                     <img
                         src="./imagenes/footshop.png"
-                        className="mx-3 logo-footshop"
+                        className="mx-5 logo-footshop"
                         alt="logo"
                     />
                 </Navbar.Brand>
@@ -62,7 +59,6 @@ export const NavBar = () => {
                         </Nav.Link>
 
                         <Nav.Link as={NavLink}
-                            activeClassName="active"
                             to="/cart">
                             <CartIcon />
                             <span>{carrito.length}</span>

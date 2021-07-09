@@ -1,9 +1,9 @@
-import './styles.css'
+import './ItemDetailContainer.css'
 import { useEffect, useState } from 'react'
-import { ItemDetail } from '../../components/ItemDetail';
+import { ItemDetail } from '../../components/ItemDetail/ItemDetail';
 import { useParams } from 'react-router-dom'
 import { getItemML } from '../../utils/const'
-import { Cargando } from '../../components/Spiner'
+import { Cargando } from '../../components/Spiner/Spiner'
 
 export const ItemDetailContainer = () => {
 
@@ -37,7 +37,7 @@ export const ItemDetailContainer = () => {
                     id={producto.id}>
                 </ItemDetail>)
                 :
-                <Cargando></Cargando>}
+                <Cargando/>}
         </>
 
     )
