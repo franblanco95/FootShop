@@ -1,6 +1,6 @@
 import React from 'react'
 import './styles.css'
-import { CardComponent } from "../CardComponent"
+import { CardComponent } from "../../components/CardComponent"
 import { Col, Container, Row } from 'react-bootstrap'
 
 export function ItemList({ productosList, categoria }) {

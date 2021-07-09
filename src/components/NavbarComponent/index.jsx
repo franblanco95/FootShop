@@ -1,12 +1,15 @@
 import { CartIcon } from '../../components/CartIcon';
-import { Navbar, Nav, Form, FormControl, Button } from 'react-bootstrap';
+import { Navbar, Nav } from 'react-bootstrap';
 import { Link, NavLink } from 'react-router-dom';
 import './styles.css'
-import React from 'react'
+import { React, useContext } from 'react'
+import { CartContext } from '../../context/cartContext'
+
 
 
 
 export const NavBar = () => {
+    const { carrito } = useContext(CartContext)
     return (
         <div>
             <Navbar bg="dark" variant="dark" expand="lg">
@@ -58,22 +61,14 @@ export const NavBar = () => {
                             <h4>Buzos</h4>
                         </Nav.Link>
 
-                        <Nav.Link>
+                        <Nav.Link as={NavLink}
+                            activeClassName="active"
+                            to="/cart">
                             <CartIcon />
+                            <span>{carrito.length}</span>
                         </Nav.Link>
 
                     </Nav>
-
-                    <Form className="d-flex me-3">
-
-                        <FormControl
-                            type="search"
-                            placeholder="Buscar productos"
-                            className="me-3"
-                            aria-label="Search"
-                        />
-                        <Button variant="outline-warning">Buscar</Button>
-                    </Form>
 
                 </Navbar.Collapse>
             </Navbar>

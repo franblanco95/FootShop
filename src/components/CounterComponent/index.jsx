@@ -1,7 +1,25 @@
-import React, { useState } from 'react'
+import React, { useState, useContext } from 'react'
 import { Button, InputGroup, FormControl } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
+import { CartContext } from '../../context/cartContext'
 
-export const CounterComponent = ({ stock, onAdd }) => {
+export const CounterComponent = ({ stock, title, price }) => {
+
+    const cartContext = useContext(CartContext)
+
+    const terminarCompra = () => {
+        const aux = {
+            item: {
+                titulo: title,
+                precio: price
+            },
+            quantity: counter
+        }
+        console.log(aux)
+        cartContext.addItem(aux)
+
+    }
+
     const [counter, setCounter] = useState(1)
 
     const sumar = () => {
@@ -32,7 +50,10 @@ export const CounterComponent = ({ stock, onAdd }) => {
                 <FormControl type="number" value={counter} onChange={manualChange} />
                 <Button onClick={sumar}>+</Button>
             </InputGroup>
-            <Button onClick={() => onAdd(counter)} variant="primary">Agregar al Carrito</Button>
+            <Button onClick={terminarCompra} variant="primary">Agregar al Carrito</Button>
+            <Link to="/cart">
+                <Button className="ms-2">Ir al Carrito</Button>
+            </Link>
         </>
     )
 }

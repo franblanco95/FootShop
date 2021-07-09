@@ -1,7 +1,7 @@
 import './styles.css'
 import { Cargando } from '../../components/Spiner';
 import { useEffect, useState } from 'react'
-import { ItemList } from '../../components/ItemList';
+import { ItemList } from '../../containers/ItemList';
 import { useParams } from 'react-router-dom';
 import { getDataML } from '../../utils/const'
 
