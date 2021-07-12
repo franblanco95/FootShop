@@ -4,7 +4,7 @@ import { Container, Row, Button } from 'react-bootstrap'
 import { CartContext } from '../../context/cartContext'
 
 export const Cart = () => {
-    const { carrito, vaciarCarrito, removeItem } = useContext(CartContext)
+    const { carrito, vaciarCarrito, removeItem, totalPrice } = useContext(CartContext)
 
     return (
         <div>
@@ -16,11 +16,12 @@ export const Cart = () => {
                         return (
                             <>
                                 <h1 className="texto-cart" key={index}>{item.title} - Precio: {item.price} - Cantidad: {item.quantity}</h1>
-                                <Button onClick={() => removeItem(index)}>X</Button>
+                                <Button className="boton" onClick={() => removeItem(index)}>X</Button>
                             </>
                         );
                     })}
-                    <Button className="boton" onClick={vaciarCarrito}>Vaciar Carrito</Button>
+                    <div><span>Total: ${totalPrice}</span> </div>
+                <Button className="boton" onClick={vaciarCarrito}>Vaciar Carrito</Button>
                 </Row>
             </Container>
 

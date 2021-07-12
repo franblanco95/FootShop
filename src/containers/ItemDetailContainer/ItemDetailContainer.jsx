@@ -21,7 +21,7 @@ export const ItemDetailContainer = () => {
                     img: response.thumbnail
                 }
                 setProducto(aux);
-            }, 2000);
+            }, 500);
 
         }
         waitForData();
