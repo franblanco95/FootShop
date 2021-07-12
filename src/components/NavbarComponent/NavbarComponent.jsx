@@ -16,27 +16,27 @@ export const NavBar = () => {
             </Navbar.Brand>
 
             <Navbar.Toggle aria-controls="navbarScroll" />
-            <Navbar.Collapse className="justify-content-end" id="navbarScroll">
+            <Navbar.Collapse className="justify-content-evenly" id="navbarScroll">
 
                 <Nav className="my-lg-0" navbarScroll>
                     <Nav.Link as={NavLink} exact={true} className="navbar-link" activeClassName="active" to="/">
-                        <h4>Inicio</h4>
+                        <h4 className="navbar-title mb-0">Inicio</h4>
                     </Nav.Link>
 
                     <Nav.Link as={NavLink} className="navbar-link" activeClassName="active" to="/category/Remeras">
-                        <h4>Remeras</h4>
+                        <h4 className="navbar-title mb-0">Remeras</h4>
                     </Nav.Link>
 
                     <Nav.Link as={NavLink} className="navbar-link" activeClassName="active" to="/category/Zapatillas">
-                        <h4>Zapatillas</h4>
+                        <h4 className="navbar-title mb-0">Zapatillas</h4>
                     </Nav.Link>
 
                     <Nav.Link as={NavLink} className="navbar-link" activeClassName="active" to="/category/Buzos">
-                        <h4>Buzos</h4>
+                        <h4 className="navbar-title mb-0">Buzos</h4>
                     </Nav.Link>
 
                     <Nav.Link as={NavLink} className="navbar-link" activeClassName="active" to="/miscompras">
-                        <h4>Mis Compras</h4>
+                        <h4 className="navbar-title mb-0">Mis Compras</h4>
                     </Nav.Link>
 
                     <Nav.Link as={NavLink} className="navbar-link" to="/cart">

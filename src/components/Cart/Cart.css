@@ -1,7 +1,45 @@
-.texto-cart {
+.boton {
+    width: 10rem;
+}
+
+.cart-body {
+    margin-top: 1rem;
+    padding: 10px 0;
+    background-color: whitesmoke;
+    border-radius: 7px;
+}
+
+.cart-list {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 5px;
+    background-color: white;
+    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+
+}
+
+.cart-title {
+    font-size: 1.3rem;
+    text-align: left;
+}
+
+.cart-actions {
+    text-align: left;
+    display: flex;
+    justify-content: space-between;
+}
+
+.cart-img {
+    margin-right: 10px;
+}
+
+.cart-icon {
+    cursor: pointer;
     font-size: 1rem;
 }
 
-.boton {
-    width: 10rem;
+.cart-data {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
