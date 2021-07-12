@@ -8,9 +8,8 @@ export const CartComponentContext = ({ children }) => {
 
     const vaciarCarrito = () => setCarrito([]);
 
-    const isInCart = (id) => {
-        carrito.some(product => product.id === id)
-    }
+    //Controla si el elemento ya esta en el carrito
+    const isInCart = (id) => carrito.some(product => product.id === id)
 
     const addItem = ({ product }, quantity) => {
         if (isInCart(product.id)) {
@@ -23,8 +22,6 @@ export const CartComponentContext = ({ children }) => {
         } else {
             setCarrito(prev => [...prev, { ...product, quantity }]);
         }
-        console.log(carrito)
-
     }
 
     const removeItem = (index) => {
