@@ -1,15 +1,19 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import './ItemDetail.css'
 import { Container, Row, Col, Card } from 'react-bootstrap';
 import { CounterComponent } from '../CounterComponent/CounterComponent';
+import { CartContext } from '../../context/cartContext'
 
 
-export const ItemDetail = ({ img, title, price, id }) => {
+export const ItemDetail = ({ product }) => {
+
+    const { addItem } = useContext(CartContext)
+
+    const onAdd = qty => addItem({product}, qty)
 
     const prueba = {
         stock: 10
     }
-
 
     return (
         <>
@@ -17,15 +21,15 @@ export const ItemDetail = ({ img, title, price, id }) => {
                 <Card className="my-5 p-3">
                     <Row>
                         <Col>
-                            <img className="imagenes" src={img} alt="foto" />
+                            <img className="imagenes" src={product.img} alt="foto" />
                         </Col>
                         <Col>
-                            <p className="titulo">{title}</p>
+                            <p className="titulo">{product.title}</p>
                             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas dolorem dignissimos nostrum atque. Vel, dolore, neque tempore doloremque maiores eos, iure laboriosam et quia quod commodi odio sed alias minima.</p>
-                            <p className="precio">Precio: $ {price}</p>
+                            <p className="precio">Precio: $ {product.price}</p>
                             {prueba.stock > 0 ? <p> Stock: {prueba.stock} </p> : <p>No hay stock</p>}
-                            
-                            <CounterComponent stock={prueba} title={title} price={price} id={id}/>
+
+                            <CounterComponent stock={prueba} onAdd={onAdd} />
                         </Col>
                     </Row>
                 </Card>

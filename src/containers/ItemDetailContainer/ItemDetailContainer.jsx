@@ -31,13 +31,11 @@ export const ItemDetailContainer = () => {
         <>
             {producto ? (
                 <ItemDetail
-                    img={producto.img}
-                    title={producto.title}
-                    price={producto.price}
-                    id={producto.id}>
+                    product={producto}
+                >
                 </ItemDetail>)
                 :
-                <Cargando/>}
+                <Cargando />}
         </>
 
     )

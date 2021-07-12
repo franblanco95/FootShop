@@ -6,16 +6,26 @@ export const CartComponentContext = ({ children }) => {
 
     const [carrito, setCarrito] = useState([])
 
-    const addItem = ({ item, quantity }) => {
-        setCarrito([{
-            item: item,
-            cantidad: quantity
-        }, ...carrito])
+    const vaciarCarrito = () => setCarrito([]);
+
+    const isInCart = (id) => {
+        carrito.some(product => product.id === id)
+    }
+
+    const addItem = ({ product }, quantity) => {
+        if (isInCart(product.id)) {
+            const newCart = carrito.map(cartElement => {
+                if (cartElement.id === product.id) {
+                    return { ...cartElement, quantity: cartElement.quantity + quantity }
+                } else return cartElement;
+            })
+            setCarrito(newCart);
+        } else {
+            setCarrito(prev => [...prev, { ...product, quantity }]);
+        }
         console.log(carrito)
 
     }
-
-    const vaciarCarrito = () => setCarrito([]);
 
     useEffect(() => {
         const localCart = localStorage.getItem('carrito');
@@ -28,7 +38,7 @@ export const CartComponentContext = ({ children }) => {
     }, [carrito])
 
     return (
-        <CartContext.Provider value={{ addItem, carrito, vaciarCarrito }}>
+        <CartContext.Provider value={{ addItem, carrito, setCarrito, vaciarCarrito }}>
             {children}
         </CartContext.Provider>
     )

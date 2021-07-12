@@ -6,6 +6,7 @@ export async function getDataML(categorias) {
     return data.results;
 }
 
+
 export async function getItemML(idItem) {
     const response = await fetch(`${url}items/${idItem}`)
     const data = await response.json()

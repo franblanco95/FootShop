@@ -13,7 +13,7 @@ export const Cart = () => {
                     <h1> Carrito</h1>
                     
                     {carrito.map((item, index) => (
-                        <h1 className="texto-cart" key={index}>{item.item.titulo} - Precio: {item.item.precio} - Cantidad: {item.cantidad}</h1>
+                        <h1 className="texto-cart" key={index}>{item.title} - Precio: {item.price} - Cantidad: {item.quantity}</h1>
                     ))}
                     <Button className="boton" onClick={vaciarCarrito}>Vaciar Carrito</Button>
                 </Row>

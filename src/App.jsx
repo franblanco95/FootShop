@@ -17,7 +17,7 @@ function App() {
     <>
       <CartComponentContext>
 
-        <BrowserRouter BrowserRouter >
+        <BrowserRouter>
           <NavBar />
           <Switch>
             <Route exact path="/" component={HomeContainer} />
