@@ -27,6 +27,12 @@ export const CartComponentContext = ({ children }) => {
 
     }
 
+    const removeItem = (index) => {
+        let updatedCart = carrito;
+        updatedCart.splice(index, 1);
+        setCarrito(updatedCart);
+    }
+
     useEffect(() => {
         const localCart = localStorage.getItem('carrito');
         if (!localCart) localStorage.setItem('carrito', JSON.stringify([]));
@@ -38,7 +44,7 @@ export const CartComponentContext = ({ children }) => {
     }, [carrito])
 
     return (
-        <CartContext.Provider value={{ addItem, carrito, setCarrito, vaciarCarrito }}>
+        <CartContext.Provider value={{ addItem, carrito, setCarrito, vaciarCarrito, removeItem }}>
             {children}
         </CartContext.Provider>
     )
