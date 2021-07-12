@@ -20,13 +20,13 @@ export const ItemDetail = ({ product }) => {
             <Container className="fondito mt-5 p-4">
                 <Card className="my-5 p-3">
                     <Row>
-                        <Col>
-                            <img className="imagenes" src={product.img} alt="foto" />
+                        <Col className="detail-img-container">
+                            <img src={product.img} alt="foto" />
                         </Col>
                         <Col>
-                            <p className="titulo">{product.title}</p>
+                            <p className="detail-titulo">{product.title}</p>
                             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas dolorem dignissimos nostrum atque. Vel, dolore, neque tempore doloremque maiores eos, iure laboriosam et quia quod commodi odio sed alias minima.</p>
-                            <p className="precio">Precio: $ {product.price}</p>
+                            <p className="detail-precio">Precio: $ {product.price}</p>
                             {prueba.stock > 0 ? <p> Stock: {prueba.stock} </p> : <p>No hay stock</p>}
 
                             <CounterComponent stock={prueba} onAdd={onAdd} />

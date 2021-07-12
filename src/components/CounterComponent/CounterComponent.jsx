@@ -30,11 +30,13 @@ export const CounterComponent = ({ stock, onAdd }) => {
 
     return (
         <>
-            <InputGroup className="mb-3">
-                <Button onClick={restar}>-</Button>
-                <FormControl type="number" value={counter} onChange={manualChange} />
-                <Button onClick={sumar}>+</Button>
-            </InputGroup>
+            <div className="counter-container">
+                <InputGroup className="mb-3">
+                    <Button onClick={restar}>-</Button>
+                    <FormControl type="number" value={counter} onChange={manualChange} />
+                    <Button onClick={sumar}>+</Button>
+                </InputGroup>
+            </div>
             <Button onClick={() => onAdd(counter)} variant="primary">Agregar al Carrito</Button>
             <Link to="/cart">
                 <Button className="ms-2">Ir al Carrito</Button>

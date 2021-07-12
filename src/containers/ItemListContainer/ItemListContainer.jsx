@@ -23,7 +23,7 @@ export const ItemListContainer = () => {
                     };
                 });
                 setProductos(aux);
-            }, 500)
+            }, 1500)
 
         }
         setProductos([]);
