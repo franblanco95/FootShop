@@ -16,9 +16,10 @@ export const CartComponentContext = ({ children }) => {
         async function getData() {
             const DB = getFirestore();
             const COLLECTION = DB.collection("productos")
-            const RESPONSE = await COLLECTION.get()
             // const getItems = COLLECTION.where('categoryId', '==', categoria)
             // console.log(getItems)
+            const RESPONSE = await COLLECTION.get()
+            console.log(RESPONSE.docs[0].data())
             setProductos(RESPONSE.docs.map(element => element.data()));
             console.log(productos)
             // getItems.get().then((value) => {

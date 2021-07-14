@@ -3,6 +3,7 @@ import './Cart.css'
 import { Container, Row, Button, Col } from 'react-bootstrap'
 import { Trash } from 'react-bootstrap-icons';
 import { CartContext } from '../../context/cartContext'
+import { NavLink } from 'react-router-dom'
 
 export const Cart = () => {
     const { carrito, vaciarCarrito, removeItem, totalPrice } = useContext(CartContext)
@@ -33,7 +34,12 @@ export const Cart = () => {
                             })}
                             <div><span>Precio Total: ${totalPrice}</span> </div>
                             <Button className="boton" onClick={vaciarCarrito}>Vaciar Carrito</Button>
+
+
+                            <Button as={NavLink} to="/formulario" className="boton">Terminar Compra</Button>
+
                         </ul>
+
                     </Col>
 
                 </Row>
