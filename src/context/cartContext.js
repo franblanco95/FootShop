@@ -7,7 +7,6 @@ export const CartComponentContext = ({ children }) => {
 
     const [carrito, setCarrito] = useState([])
     const [totalPrice, setTotalPrice] = useState(0)
-
     const [productos, setProductos] = useState([])
 
     const getData = () => {
@@ -47,16 +46,14 @@ export const CartComponentContext = ({ children }) => {
 
 
     function createOrder(name, email, phone) {
-
+        const db = getFirestore();
         console.log(name, email, phone)
+        //Creamos una coleccion orders en firebase
+        const order = { buyer: { name, phone, email }, item: carrito, total: totalPrice };
+        db.collection("orders").add(order).then(({ id }) => {
+            console.log(id);
+        });
     }
-    // const order = { buyer: { name, phone, email }, item: shoppingList, total: getTotal() };
-    // const db = getFirestore()
-    // Creamos una coleccion
-    // db.collection("orders").add(order).then(({id})=> {
-    //     console.log(id);
-
-    // });
 
 
     //Controla si el elemento ya esta en el carrito

@@ -1,5 +1,5 @@
-import React, { useState } from 'react'
 import './CounterComponent.css'
+import React, { useState } from 'react'
 import { Button, InputGroup, FormControl } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 
@@ -8,7 +8,7 @@ export const CounterComponent = ({ stock, onAdd }) => {
     const [counter, setCounter] = useState(1)
 
     const sumar = () => {
-        if (counter < stock.stock) {
+        if (counter < stock) {
             setCounter(counter + 1)
         }
     }
@@ -21,8 +21,8 @@ export const CounterComponent = ({ stock, onAdd }) => {
 
     const manualChange = (e) => {
         let value = e.target.value
-        if (value > stock.stock) {
-            setCounter(stock.stock)
+        if (value > stock) {
+            setCounter(stock)
         } else {
             setCounter(value)
         }
