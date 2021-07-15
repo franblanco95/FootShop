@@ -1,5 +1,6 @@
 import firebase from 'firebase/app';
 import "@firebase/firestore";
+import "@firebase/auth"
 
 const firebaseConfig = firebase.initializeApp({
     apiKey: "AIzaSyBtAh9RYYK2ub_4mC5xTcwS2vNtVR-RKuw",
@@ -8,13 +9,17 @@ const firebaseConfig = firebase.initializeApp({
     storageBucket: "fran-ecommerce.appspot.com",
     messagingSenderId: "347095890439",
     appId: "1:347095890439:web:628c564ace7d534cfe48a2"
-  });
-  
-  export const getFirebase = () => {
-      return firebaseConfig
-  }
-  // Funcion que devuelve la informacion de la BD
-  export const getFirestore = () => {
-      return firebase.firestore(firebaseConfig);
-  }
+});
+
+export const getFirebase = () => {
+    return firebaseConfig
+}
+// Funcion que devuelve la informacion de la BD
+export const getFirestore = () => {
+    return firebase.firestore(firebaseConfig);
+}
+//Funcion de Firebase de Autenticacion
+export const getAuth = () => {
+    return firebase.auth(firebaseConfig)
+}
 

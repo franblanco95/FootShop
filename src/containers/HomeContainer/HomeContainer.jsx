@@ -1,4 +1,5 @@
 import { Container, Row } from 'react-bootstrap';
+import { Auth } from '../../components/Auth/Auth';
 import './HomeContainer.css';
 
 export const HomeContainer = () => {
@@ -7,7 +8,8 @@ export const HomeContainer = () => {
         <section>
             <Container className="fondo" fluid="md">
                 <Row className="text-center py-5">
-                    <h1>Bienvenido al E-Commerce de Fran</h1>
+                    <h1>Bienvenido a FootShop</h1>
+                    <Auth/>
                 </Row>
             </Container>
         </section >
