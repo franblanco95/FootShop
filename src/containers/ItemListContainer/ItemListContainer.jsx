@@ -1,6 +1,6 @@
 import './ItemListContainer.css'
 import { Cargando } from '../../components/Spiner/Spiner';
-import { useEffect, useContext } from 'react'
+import { useEffect, useContext, useState } from 'react'
 import { ItemList } from '../ItemList/ItemList';
 import { useParams } from 'react-router-dom';
 // import { getDataML } from '../../utils/const'
@@ -8,21 +8,38 @@ import { CartContext } from '../../context/cartContext';
 
 export const ItemListContainer = () => {
 
-    const { productos, setCategoria, setProductos } = useContext(CartContext)
+    const { productos } = useContext(CartContext)
     const { categoryId } = useParams()
+    const [itemsFiltrados, setItemsFiltrados] = useState([])
 
+    const filtradoCategoria = (categoryId, _productos) => {
+        if (_productos !== '') {
+            if (categoryId !== undefined) {
+                const filtrado = _productos.filter((obj) => {
+                    return obj.categoryId === categoryId;
+                });
+                if (filtrado.length === 0) {
+                    setItemsFiltrados('no category found');
+                } else {
+                    setItemsFiltrados(filtrado);
+                }
+
+            } else {
+                setItemsFiltrados(_productos);
+            }
+        }
+
+
+    }
     useEffect(() => {
-        
         setTimeout(() => {
-            setCategoria(categoryId)
-        }, 1500)
-
-        setProductos([]);
+            filtradoCategoria(categoryId, productos)
+        }, 500)
     }, [categoryId]);
 
     return (
         <>
-            {productos.length > 0 ? <ItemList productosList={productos} categoria={categoryId}></ItemList> :
+            {productos.length > 0 ? <ItemList productos={itemsFiltrados}></ItemList> :
                 <Cargando />}
 
 

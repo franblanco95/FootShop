@@ -9,39 +9,54 @@ export const CartComponentContext = ({ children }) => {
     const [totalPrice, setTotalPrice] = useState(0)
 
     const [productos, setProductos] = useState([])
-    const [categoria, setCategoria] = useState([])
+
+    const getData = () => {
+        const db = getFirestore();
+
+        const itemsCollection = db.collection('productos');
+        itemsCollection.get().then((value) => {
+            if (value.size === 0) {
+                console.log('No results')
+            }
+            const aux = value.docs.map(doc => {
+                return { ...doc.data(), id: doc.id }
+            });
+            setProductos(aux)
+        })
+    }
 
     useEffect(() => {
-
-        async function getData() {
-            const DB = getFirestore();
-            const COLLECTION = DB.collection("productos")
-            // const getItems = COLLECTION.where('categoryId', '==', categoria)
-            // console.log(getItems)
-            const RESPONSE = await COLLECTION.get()
-            console.log(RESPONSE.docs[0].data())
-            setProductos(RESPONSE.docs.map(element => element.data()));
-            console.log(productos)
-            // getItems.get().then((value) => {
-            //     value.docs.map(element => setProductos(prev => [...prev, element.data()]));
-            //     console.log(getItems)
-            //     console.log(productos)
-            // })
-        }
         getData();
     }, [])
+
+    // const getItems = COLLECTION.where('categoryId', '==', categoria)
+    // console.log(getItems)
+
+    // const RESPONSE = await COLLECTION.get()
+    // console.log(RESPONSE.docs[0].data())
+    // setProductos(RESPONSE.docs.map(element => element.data()));
+    // console.log(productos)
+
+    // getItems.get().then((value) => {
+    //     value.docs.map(element => setProductos(prev => [...prev, element.data()]));
+    //     console.log(getItems)
+    //     console.log(productos)
+    // })
+    // }
+
+
 
     function createOrder(name, email, phone) {
 
         console.log(name, email, phone)
-        // const order = { buyer: { name, phone, email }, item: shoppingList, total: getTotal() };
-        // const db = getFirestore()
-        // Creamos una coleccion
-        // db.collection("orders").add(order).then(({id})=> {
-        //     console.log(id);
-
-        // });
     }
+    // const order = { buyer: { name, phone, email }, item: shoppingList, total: getTotal() };
+    // const db = getFirestore()
+    // Creamos una coleccion
+    // db.collection("orders").add(order).then(({id})=> {
+    //     console.log(id);
+
+    // });
 
 
     //Controla si el elemento ya esta en el carrito
@@ -92,7 +107,7 @@ export const CartComponentContext = ({ children }) => {
     }, [carrito])
 
     return (
-        <CartContext.Provider value={{ addItem, carrito, setCarrito, vaciarCarrito, removeItem, totalPrice, setCategoria, productos, setProductos, createOrder }}>
+        <CartContext.Provider value={{ addItem, carrito, setCarrito, vaciarCarrito, removeItem, totalPrice, productos, setProductos, createOrder }}>
             {children}
         </CartContext.Provider>
     )

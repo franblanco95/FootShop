@@ -3,16 +3,16 @@ import './ItemList.css'
 import { CardComponent } from "../../components/CardComponent/CardComponent"
 import { Col, Container, Row } from 'react-bootstrap'
 
-export function ItemList({ productosList, categoria }) {
+export function ItemList({ productos }) {
     return (
         <>
             <Container className="fondito p-5">
-            <h2>Categoría: {categoria}</h2>
+                <h2>Categoría: </h2>
                 <Row>
-                    {productosList.map((element, index) => {
+                    {productos.map((element, index) => {
                         return (
                             <Col key={index}>
-                                <CardComponent img={element.img} title={element.name} price={element.price} id={element.id}/>
+                                <CardComponent img={element.img} title={element.name} price={element.price} id={element.id} />
                             </Col >
                         )
                     })}

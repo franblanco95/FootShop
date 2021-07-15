@@ -23,16 +23,20 @@ export const NavBar = () => {
                         <h4 className="navbar-title mb-0">Inicio</h4>
                     </Nav.Link>
 
-                    <Nav.Link as={NavLink} className="navbar-link" activeClassName="active" to="/category/Remeras">
-                        <h4 className="navbar-title mb-0">Remeras</h4>
-                    </Nav.Link>
-
-                    <Nav.Link as={NavLink} className="navbar-link" activeClassName="active" to="/category/Zapatillas">
+                    <Nav.Link as={NavLink} className="navbar-link" activeClassName="active" to="/category/zapatillas">
                         <h4 className="navbar-title mb-0">Zapatillas</h4>
                     </Nav.Link>
 
-                    <Nav.Link as={NavLink} className="navbar-link" activeClassName="active" to="/category/Buzos">
-                        <h4 className="navbar-title mb-0">Buzos</h4>
+                    <Nav.Link as={NavLink} className="navbar-link" activeClassName="active" to="/category/zapatos">
+                        <h4 className="navbar-title mb-0">Zapatos</h4>
+                    </Nav.Link>
+
+                    <Nav.Link as={NavLink} className="navbar-link" activeClassName="active" to="/category/ojotas">
+                        <h4 className="navbar-title mb-0">Ojotas</h4>
+                    </Nav.Link>
+
+                    <Nav.Link as={NavLink} className="navbar-link" activeClassName="active" to="/category/medias">
+                        <h4 className="navbar-title mb-0">Medias</h4>
                     </Nav.Link>
 
                     <Nav.Link as={NavLink} className="navbar-link" activeClassName="active" to="/miscompras">

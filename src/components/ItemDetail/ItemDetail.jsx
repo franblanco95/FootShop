@@ -6,14 +6,11 @@ import { CartContext } from '../../context/cartContext'
 
 
 export const ItemDetail = ({ product }) => {
+    console.log(product)
 
     const { addItem } = useContext(CartContext)
 
     const onAdd = qty => addItem({product}, qty)
-
-    const prueba = {
-        stock: 10
-    }
 
     return (
         <>
@@ -24,12 +21,12 @@ export const ItemDetail = ({ product }) => {
                             <img src={product.img} alt="foto" />
                         </Col>
                         <Col>
-                            <p className="detail-titulo">{product.title}</p>
+                            <p className="detail-titulo">{product.name}</p>
                             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas dolorem dignissimos nostrum atque. Vel, dolore, neque tempore doloremque maiores eos, iure laboriosam et quia quod commodi odio sed alias minima.</p>
                             <p className="detail-precio">Precio: $ {product.price}</p>
-                            {prueba.stock > 0 ? <p> Stock: {prueba.stock} </p> : <p>No hay stock</p>}
+                            {product.stock > 0 ? <p> Stock: {product.stock} </p> : <p>No hay stock</p>}
 
-                            <CounterComponent stock={prueba} onAdd={onAdd} />
+                            <CounterComponent stock={product.stock} onAdd={onAdd} />
                         </Col>
                     </Row>
                 </Card>
