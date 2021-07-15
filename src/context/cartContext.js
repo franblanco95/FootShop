@@ -31,6 +31,18 @@ export const CartComponentContext = ({ children }) => {
         getData();
     }, [])
 
+    function createOrder(name, email, phone) {
+
+        console.log(name, email, phone)
+        // const order = { buyer: { name, phone, email }, item: shoppingList, total: getTotal() };
+        // const db = getFirestore()
+        // Creamos una coleccion
+        // db.collection("orders").add(order).then(({id})=> {
+        //     console.log(id);
+
+        // });
+    }
+
 
     //Controla si el elemento ya esta en el carrito
     const isInCart = (id) => carrito.some(product => product.id === id)
@@ -80,7 +92,7 @@ export const CartComponentContext = ({ children }) => {
     }, [carrito])
 
     return (
-        <CartContext.Provider value={{ addItem, carrito, setCarrito, vaciarCarrito, removeItem, totalPrice, setCategoria, productos, setProductos }}>
+        <CartContext.Provider value={{ addItem, carrito, setCarrito, vaciarCarrito, removeItem, totalPrice, setCategoria, productos, setProductos, createOrder }}>
             {children}
         </CartContext.Provider>
     )
