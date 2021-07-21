@@ -24,9 +24,11 @@ export const Auth = () => {
     }
 
     return (
-        <div>
+        <>
             {!user &&
                 <div className="auth-container">
+                    <h1 className="auth-titulo">Bienvenido a FootShop!</h1>
+                    <p className="auth-sub">Ingresa con tu email y contraseña</p>
                     <div className="input-container mb-3">
                         <input className="auth-input" placeholder="E-mail" type="email" onChange={(e) => setEmail(e.target.value)} id="email" />
                     </div>
@@ -42,7 +44,7 @@ export const Auth = () => {
             {
                 user && <button onClick={logout}>Cerrar Sesion</button>
             }
-        </div>
+        </>
     )
 
 }

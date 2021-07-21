@@ -9,6 +9,7 @@ export const CartComponentContext = ({ children }) => {
     const [totalPrice, setTotalPrice] = useState(0)
     const [productos, setProductos] = useState([])
 
+    //Traigo a los productos de la BD de Firestore
     const getData = () => {
         const db = getFirestore();
 

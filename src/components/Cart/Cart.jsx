@@ -11,8 +11,8 @@ export const Cart = () => {
     return (
         <div>
             <Container className="fondo" fluid="md">
-                <Row className="text-center justify-content-center">
-                    <Col>
+                <Row>
+                    <Col className="text-center d-flex justify-content-center">
                         <ul className="cart-body">
                             <h1> Carrito</h1>
                             {carrito.map((item, index) => {

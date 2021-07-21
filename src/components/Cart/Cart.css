@@ -3,6 +3,7 @@
 }
 
 .cart-body {
+    width: 50vw;
     margin-top: 1rem;
     padding: 10px 0;
     background-color: whitesmoke;
