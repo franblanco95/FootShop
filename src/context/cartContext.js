@@ -31,23 +31,6 @@ export const CartComponentContext = ({ children }) => {
 
     }, [])
 
-    // const getItems = COLLECTION.where('categoryId', '==', categoria)
-    // console.log(getItems)
-
-    // const RESPONSE = await COLLECTION.get()
-    // console.log(RESPONSE.docs[0].data())
-    // setProductos(RESPONSE.docs.map(element => element.data()));
-    // console.log(productos)
-
-    // getItems.get().then((value) => {
-    //     value.docs.map(element => setProductos(prev => [...prev, element.data()]));
-    //     console.log(getItems)
-    //     console.log(productos)
-    // })
-    // }
-
-
-
     function createOrder(name, email, phone) {
         const db = getFirestore();
         console.log(name, email, phone)

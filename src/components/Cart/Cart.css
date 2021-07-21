@@ -44,3 +44,9 @@
     flex-direction: column;
     justify-content: center;
 }
+
+.cart-total {
+    margin: 1rem 0;
+    font-size: 1.3em;
+    font-weight: 500;
+}

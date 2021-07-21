@@ -32,8 +32,8 @@ export const Cart = () => {
                                     </li>
                                 );
                             })}
-                            <div><span>Precio Total: ${totalPrice}</span> </div>
-                            <Button className="boton" onClick={vaciarCarrito}>Vaciar Carrito</Button>
+                            <div className="cart-total"><span>Total: $ {totalPrice}</span> </div>
+                            <Button className="boton me-4" onClick={vaciarCarrito}>Vaciar Carrito</Button>
 
 
                             <Button as={NavLink} to="/formulario" className="boton">Terminar Compra</Button>
