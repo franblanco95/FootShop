@@ -10,7 +10,7 @@ export const ItemDetail = ({ product }) => {
 
     const { addItem } = useContext(CartContext)
 
-    const onAdd = qty => addItem({product}, qty)
+    const onAdd = qty => addItem({ product }, qty)
 
     return (
         <>
@@ -24,9 +24,14 @@ export const ItemDetail = ({ product }) => {
                             <p className="detail-titulo">{product.name}</p>
                             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas dolorem dignissimos nostrum atque. Vel, dolore, neque tempore doloremque maiores eos, iure laboriosam et quia quod commodi odio sed alias minima.</p>
                             <p className="detail-precio">Precio: $ {product.price}</p>
-                            {product.stock > 0 ? <p> Stock: {product.stock} </p> : <p>No hay stock</p>}
+                            {product.stock > 0 ?
+                                <>
+                                    <p> Stock: {product.stock} </p>
+                                    <CounterComponent stock={product.stock} onAdd={onAdd} />
+                                </> :
+                                <p>No hay stock</p>
+                            }
 
-                            <CounterComponent stock={product.stock} onAdd={onAdd} />
                         </Col>
                     </Row>
                 </Card>
