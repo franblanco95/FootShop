@@ -27,16 +27,15 @@ export const Auth = () => {
         <div>
             {!user &&
                 <div className="auth-container">
-                    <div className="mb-3">
-                        <label htmlFor="email">Correo Electronico</label>
-                        <input type="email" onChange={(e) => setEmail(e.target.value)} id="email" />
+                    <div className="input-container mb-3">
+                        <input className="auth-input" placeholder="E-mail" type="email" onChange={(e) => setEmail(e.target.value)} id="email" />
                     </div>
-                    <div className="mb-3">
-                        <label htmlFor="password">Contraseña</label>
-                        <input type="password" onChange={(e) => setPassword(e.target.value)} id="password" />
+                    <div className="input-container mb-3">
+                        <input className="auth-input" placeholder="Password" type="password" onChange={(e) => setPassword(e.target.value)} id="password" />
                     </div>
-                    <button onClick={login}>Iniciar Sesión</button>
-                    <button onClick={register}>Crear Cuenta</button>
+
+                    <button className="login-button" onClick={login}>Iniciar Sesión</button>
+                    <button className="login-button" onClick={register}>Crear Cuenta</button>
 
                 </div>
             }
