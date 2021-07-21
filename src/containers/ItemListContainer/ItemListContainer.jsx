@@ -32,9 +32,7 @@ export const ItemListContainer = () => {
 
     }
     useEffect(() => {
-        setTimeout(() => {
-            filtradoCategoria(categoryId, productos)
-        }, 500)
+        filtradoCategoria(categoryId, productos)
     }, [categoryId]);
 
     return (

@@ -21,7 +21,7 @@ export const Cart = () => {
                                     <li key={index} className="cart-list">
                                         <img className="cart-img" src={item.img} />
                                         <div className="cart-data">
-                                            <h3 className="cart-title">{item.title}</h3>
+                                            <h3 className="cart-title">{item.name}</h3>
                                             <div className="cart-actions">
                                                 <span className="cart-item">Precio: $ {item.price}</span>
                                                 <span className="cart-item mx-4">Cantidad: {item.quantity}</span>

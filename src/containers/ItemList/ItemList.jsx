@@ -4,6 +4,7 @@ import { CardComponent } from "../../components/CardComponent/CardComponent"
 import { Col, Container, Row } from 'react-bootstrap'
 
 export function ItemList({ productos }) {
+    console.log(productos)
     return (
         <>
             <Container className="fondito p-5">

@@ -18,7 +18,7 @@ export const ItemDetail = ({ product }) => {
                 <Card className="my-5 p-3">
                     <Row>
                         <Col className="detail-img-container">
-                            <img src={product.img} alt="foto" />
+                            <img className="detail-img" src={product.img} alt="foto" />
                         </Col>
                         <Col>
                             <p className="detail-titulo">{product.name}</p>

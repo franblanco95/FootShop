@@ -20,12 +20,15 @@ export const CartComponentContext = ({ children }) => {
             const aux = value.docs.map(doc => {
                 return { ...doc.data(), id: doc.id }
             });
+            console.log(aux)
             setProductos(aux)
         })
+
     }
 
     useEffect(() => {
         getData();
+
     }, [])
 
     // const getItems = COLLECTION.where('categoryId', '==', categoria)
