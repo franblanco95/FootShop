@@ -11,6 +11,7 @@ export const ItemListContainer = () => {
     const { productos } = useContext(CartContext)
     const { categoryId } = useParams()
     const [itemsFiltrados, setItemsFiltrados] = useState([])
+    const [cargando, setCargando] = useState(true)
 
     const filtradoCategoria = (categoryId, _productos) => {
         if (_productos !== '') {
@@ -18,30 +19,30 @@ export const ItemListContainer = () => {
                 const filtrado = _productos.filter((obj) => {
                     return obj.categoryId === categoryId;
                 });
-                if (filtrado.length === 0) {
-                    setItemsFiltrados('no category found');
-                } else {
-                    setItemsFiltrados(filtrado);
-                }
+                setItemsFiltrados(filtrado);
+            
 
-            } else {
-                setItemsFiltrados(_productos);
-            }
+        } else {
+            setItemsFiltrados(_productos);
+            
         }
-
-
+        setCargando(false)
     }
-    useEffect(() => {
-        filtradoCategoria(categoryId, productos)
-    }, [categoryId]);
-
-    return (
-        <>
-            {productos.length > 0 ? <ItemList productos={itemsFiltrados}></ItemList> :
-                <Cargando />}
 
 
-        </>
+}
+useEffect(() => {
+    setCargando(true)
+    filtradoCategoria(categoryId, productos)
+}, [categoryId, productos]);
 
-    )
+console.log(cargando)
+if (cargando) return <Cargando />
+
+return (
+
+    <ItemList productos={itemsFiltrados} category={categoryId}/>
+
+
+)
 }

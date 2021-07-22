@@ -58,22 +58,23 @@ export const CartComponentContext = ({ children }) => {
         } else {
             setCarrito(prev => [...prev, { ...product, quantity }]);
         }
-        getTotalPrice()
+        
     }
 
     const vaciarCarrito = () => {
         setCarrito([]);
-        getTotalPrice(0);
+        
     }
 
     const removeItem = (index) => {
         let updatedCart = carrito;
         updatedCart.splice(index, 1);
         setCarrito(updatedCart);
-        getTotalPrice()
+        
     }
 
     const getTotalPrice = () => {
+        console.log(carrito)
         let total = carrito.reduce((acc, cur) => {
             return (cur.price * cur.quantity) + acc
         }, 0);
@@ -89,6 +90,7 @@ export const CartComponentContext = ({ children }) => {
 
     useEffect(() => {
         localStorage.setItem('carrito', JSON.stringify(carrito));
+        getTotalPrice();
     }, [carrito])
 
     return (
