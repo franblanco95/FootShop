@@ -1,5 +1,5 @@
-import './Auth.css'
-import React, { useState } from 'react'
+import './Auth.css';
+import React, { useState } from 'react';
 import { getAuth } from '../../firebase/client';
 
 export const Auth = () => {
@@ -8,6 +8,7 @@ export const Auth = () => {
     const [password, setPassword] = useState('');
 
     //Son funciones async porque devuelve una promesa 
+    // const { data: user } = useUser();
 
     const user = getAuth().currentUser;
 
@@ -25,10 +26,12 @@ export const Auth = () => {
 
     return (
         <>
+
             {!user &&
                 <div className="auth-container">
                     <h1 className="auth-titulo">Bienvenido a FootShop!</h1>
                     <p className="auth-sub">Ingresa con tu email y contraseña</p>
+
                     <div className="input-container mb-3">
                         <input className="auth-input" placeholder="E-mail" type="email" onChange={(e) => setEmail(e.target.value)} id="email" />
                     </div>
@@ -44,6 +47,9 @@ export const Auth = () => {
             {
                 user && <button onClick={logout}>Cerrar Sesion</button>
             }
+
+
+
         </>
     )
 

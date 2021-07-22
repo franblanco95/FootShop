@@ -7,12 +7,13 @@
     font-size: 1.2rem;
     font-weight: bold;
 }
-.detail-img-container{
+
+.detail-img-container {
     display: flex;
     justify-content: center;
 }
 
-.detail-img{
+.detail-img {
     width: 60%;
 }
 

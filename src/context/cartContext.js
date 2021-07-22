@@ -32,7 +32,8 @@ export const CartComponentContext = ({ children }) => {
 
     }, [])
 
-    function createOrder(name, email, phone) {
+    function createOrder(e, name, email, phone) {
+        e.preventDefault()
         const db = getFirestore();
         console.log(name, email, phone)
         //Creamos una coleccion orders en firebase
