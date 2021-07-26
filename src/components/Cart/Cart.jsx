@@ -10,7 +10,7 @@ export const Cart = () => {
 
     return (
         <div>
-            <Container className="fondo" fluid="md">
+            <Container className="cart-fondo" fluid="md">
                 <Row>
                     <Col className="animated fadeIn text-center d-flex justify-content-center">
                         <ul className="cart-body">

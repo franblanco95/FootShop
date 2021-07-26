@@ -14,7 +14,7 @@ export const HomeContainer = () => {
     return (
         <section>
 
-            <Container className="animated fadeIn fondo" fluid="md">
+            <Container className="animated fadeIn home-fondo" fluid="md">
                 <Row className="text-center py-5 d-flex justify-content-center">
 
                     {productos ?

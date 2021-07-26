@@ -69,11 +69,7 @@ export const CartComponentContext = ({ children }) => {
     }
 
     const removeItem = (index) => {
-        let updatedCart = carrito;
-        updatedCart.splice(index, 1);
-        setCarrito(updatedCart);
-        console.log(carrito)
-
+        setCarrito(carrito.filter((_, i) => i !== index))
     }
 
     const getTotalPrice = () => {

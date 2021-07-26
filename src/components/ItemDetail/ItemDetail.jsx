@@ -12,7 +12,7 @@ export const ItemDetail = ({ product }) => {
     const { addItem } = useContext(CartContext)
 
     const notify = () => {
-        toast(`${product.name} se ha agregado al carrito con éxito!`, {
+        toast.info(`${product.name} se ha agregado al carrito con éxito!`, {
             position: "top-right",
             autoClose: 5000,
             hideProgressBar: false,

@@ -7,7 +7,7 @@ export function ItemList({ productos,category }) {
     console.log(productos)
     return (
         <>
-            <Container className="fondito p-5">
+            <Container className="list-fondo p-5">
                 <h2>Categoría: {category}</h2>
                 <Row>
                     {productos.map((element, index) => {
