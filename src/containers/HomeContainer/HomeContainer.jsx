@@ -6,6 +6,7 @@ import { CartContext } from '../../context/cartContext';
 import { useContext } from 'react';
 
 
+
 export const HomeContainer = () => {
 
     const { productos } = useContext(CartContext)
@@ -13,9 +14,9 @@ export const HomeContainer = () => {
     return (
         <section>
 
-            <Container className="fondo" fluid="md">
+            <Container className="animated fadeIn fondo" fluid="md">
                 <Row className="text-center py-5 d-flex justify-content-center">
-                    {/* No funciona */}
+
                     {productos ?
                         (<Auth />) :
                         <Cargando />

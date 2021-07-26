@@ -14,7 +14,7 @@ export const FormComponent = () => {
     return (
         <Container className="fondo" fluid="md">
             <Row>
-                <Col>
+                <Col className="animated fadeIn">
                     <h2>Completar el formulario para finalizar la compra!</h2>
                     <Form className="form-container">
                         <Form.Group className="mb-3" controlId="formBasicName">

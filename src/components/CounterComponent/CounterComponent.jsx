@@ -2,6 +2,8 @@ import './CounterComponent.css'
 import React, { useState } from 'react'
 import { Button, InputGroup, FormControl } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 export const CounterComponent = ({ stock, onAdd }) => {
 
@@ -38,9 +40,14 @@ export const CounterComponent = ({ stock, onAdd }) => {
                 </InputGroup>
             </div>
             <Button onClick={() => onAdd(counter)} variant="primary">Agregar al Carrito</Button>
+            <div className="toast-container">
+                <ToastContainer />
+            </div>           
+
             <Link to="/cart">
                 <Button className="ms-2">Ir al Carrito</Button>
             </Link>
+
         </>
     )
 }

@@ -7,7 +7,7 @@ export const Error404 = () => {
         <div>
             <Container className="fondo" fluid="md">
                 <Row>
-                    <img className="imagen m-auto" src="./imagenes/404.png" alt="Error 404" />
+                    <img className="animated fadeIn imagen m-auto" src="./imagenes/404.png" alt="Error 404" />
                 </Row>
             </Container>
 

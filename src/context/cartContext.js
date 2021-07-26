@@ -5,6 +5,8 @@ export const CartContext = createContext();
 
 export const CartComponentContext = ({ children }) => {
 
+
+
     const [carrito, setCarrito] = useState([])
     const [totalPrice, setTotalPrice] = useState(0)
     const [productos, setProductos] = useState([])
@@ -58,23 +60,23 @@ export const CartComponentContext = ({ children }) => {
         } else {
             setCarrito(prev => [...prev, { ...product, quantity }]);
         }
-        
+
     }
 
     const vaciarCarrito = () => {
         setCarrito([]);
-        
+        console.log(carrito)
     }
 
     const removeItem = (index) => {
         let updatedCart = carrito;
         updatedCart.splice(index, 1);
         setCarrito(updatedCart);
-        
+        console.log(carrito)
+
     }
 
     const getTotalPrice = () => {
-        console.log(carrito)
         let total = carrito.reduce((acc, cur) => {
             return (cur.price * cur.quantity) + acc
         }, 0);

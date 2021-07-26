@@ -3,6 +3,7 @@ import './ItemDetail.css'
 import { Container, Row, Col, Card } from 'react-bootstrap';
 import { CounterComponent } from '../CounterComponent/CounterComponent';
 import { CartContext } from '../../context/cartContext'
+import { toast } from 'react-toastify';
 
 
 export const ItemDetail = ({ product }) => {
@@ -10,7 +11,24 @@ export const ItemDetail = ({ product }) => {
 
     const { addItem } = useContext(CartContext)
 
-    const onAdd = qty => addItem({ product }, qty)
+    const notify = () => {
+        toast(`${product.name} se ha agregado al carrito con éxito!`, {
+            position: "top-right",
+            autoClose: 5000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+        });
+    }
+
+    const onAdd = qty => {
+        addItem({ product }, qty)
+        notify()
+    }
+
+
 
     return (
         <>

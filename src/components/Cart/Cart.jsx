@@ -12,7 +12,7 @@ export const Cart = () => {
         <div>
             <Container className="fondo" fluid="md">
                 <Row>
-                    <Col className="text-center d-flex justify-content-center">
+                    <Col className="animated fadeIn text-center d-flex justify-content-center">
                         <ul className="cart-body">
                             <h1> Carrito</h1>
                             {carrito.map((item, index) => {
