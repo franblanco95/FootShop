@@ -1,21 +1,28 @@
 .navbar-container {
     box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
-    background-color: white;
+    background-color: black;
     position: sticky;
     top: 0;
     z-index: 10;
 }
 
-.navbar-link {
-    color: black;
+.navbar-title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     text-decoration: none;
     width: 10rem;
     text-align: center;
+    font-size: 1.3rem;
+    color: white;
+    font-family: 'Lato', sans-serif;
 }
 
-.navbar-title {
-    font-size: 1.3rem;
-    font-family: 'Lato', sans-serif;
+.navbar-title2 svg,
+.active {
+    font-weight: bold;
+    color: rgb(243, 186, 64);
+    fill: rgb(243, 186, 64);
 }
 
 .navbar-logo {

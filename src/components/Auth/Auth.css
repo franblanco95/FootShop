@@ -12,10 +12,12 @@
 
 .auth-titulo {
     font-size: 2.5-rem;
+    color: #d6d8e1;
 }
 
 .auth-sub {
     margin-top: 1rem;
+    color: #d6d8e1;
 }
 
 .input-container {

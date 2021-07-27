@@ -15,38 +15,24 @@ export const NavBar = () => {
                 <img src="./imagenes/footshop.png" className="mx-5 navbar-logo" alt="logo" />
             </Navbar.Brand>
 
-            <Navbar.Toggle aria-controls="navbarScroll" />
+            <Navbar.Toggle variant="white" aria-controls="navbarScroll" />
             <Navbar.Collapse className="justify-content-evenly" id="navbarScroll">
 
-                <Nav className="my-lg-0" navbarScroll>
-                    <Nav.Link as={NavLink} exact={true} className="navbar-link" activeClassName="active" to="/">
-                        <h4 className="navbar-title mb-0">Inicio</h4>
-                    </Nav.Link>
+                <Nav className="d-flex justify-content-evenly my-lg-0" navbarScroll>
 
-                    <Nav.Link as={NavLink} className="navbar-link" activeClassName="active" to="/category/zapatillas">
-                        <h4 className="navbar-title mb-0">Zapatillas</h4>
-                    </Nav.Link>
+                    <NavLink className="navbar-title" exact={true} activeClassName="active" to="/">Inicio</NavLink>
 
-                    <Nav.Link as={NavLink} className="navbar-link" activeClassName="active" to="/category/zapatos">
-                        <h4 className="navbar-title mb-0">Zapatos</h4>
-                    </Nav.Link>
+                    <NavLink className="navbar-title" activeClassName="active" to="/category/zapatillas">Zapatillas</NavLink>
 
-                    <Nav.Link as={NavLink} className="navbar-link" activeClassName="active" to="/category/ojotas">
-                        <h4 className="navbar-title mb-0">Ojotas</h4>
-                    </Nav.Link>
+                    <NavLink className="navbar-title" activeClassName="active" to="/category/zapatos">Zapatos</NavLink>
 
-                    <Nav.Link as={NavLink} className="navbar-link" activeClassName="active" to="/category/medias">
-                        <h4 className="navbar-title mb-0">Medias</h4>
-                    </Nav.Link>
+                    <NavLink className="navbar-title" activeClassName="active" to="/category/ojotas">Ojotas</NavLink>
 
-                    <Nav.Link as={NavLink} className="navbar-link" activeClassName="active" to="/miscompras">
-                        <h4 className="navbar-title mb-0">Mis Compras</h4>
-                    </Nav.Link>
+                    <NavLink className="navbar-title" activeClassName="active" to="/category/medias">Medias</NavLink>
 
-                    <Nav.Link as={NavLink} className="navbar-link" to="/cart">
-                        <CartIcon /><span>{carrito.length}</span>
-                    </Nav.Link>
+                    <NavLink className="navbar-title" activeClassName="active" to="/miscompras">Mis Compras</NavLink>
 
+                    <NavLink className="navbar-title2" activeClassName="active" to="/cart"><CartIcon activeClassName="active"/>{carrito.length}</NavLink>
 
                 </Nav>
 

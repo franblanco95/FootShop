@@ -12,19 +12,17 @@ export const HomeContainer = () => {
     const { productos } = useContext(CartContext)
 
     return (
-        <section>
+        <Container fluid className="animated fadeIn home-fondo">
+            <Row className="text-center py-5 d-flex justify-content-center">
 
-            <Container className="animated fadeIn home-fondo" fluid="md">
-                <Row className="text-center py-5 d-flex justify-content-center">
+                {productos ?
+                    (<Auth />) :
+                    <Cargando />
 
-                    {productos ?
-                        (<Auth />) :
-                        <Cargando />
+                }
+            </Row>
+        </Container>
 
-                    }
-                </Row>
-            </Container>
-        </section >
 
     )
 }
