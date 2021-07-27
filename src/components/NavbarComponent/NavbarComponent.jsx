@@ -15,24 +15,24 @@ export const NavBar = () => {
                 <img src="./imagenes/footshop.png" className="mx-5 navbar-logo" alt="logo" />
             </Navbar.Brand>
 
-            <Navbar.Toggle variant="white" aria-controls="navbarScroll" />
+            <Navbar.Toggle aria-controls="navbarScroll" />
             <Navbar.Collapse className="justify-content-evenly" id="navbarScroll">
 
                 <Nav className="d-flex justify-content-evenly my-lg-0" navbarScroll>
 
-                    <NavLink className="navbar-title" exact={true} activeClassName="active" to="/">Inicio</NavLink>
+                    <Nav.Link as={NavLink} className="navbar-title" exact={true} activeClassName="active" to="/">Inicio</Nav.Link>
 
-                    <NavLink className="navbar-title" activeClassName="active" to="/category/zapatillas">Zapatillas</NavLink>
+                    <Nav.Link as={NavLink} className="navbar-title" activeClassName="active" to="/category/zapatillas">Zapatillas</Nav.Link>
 
-                    <NavLink className="navbar-title" activeClassName="active" to="/category/zapatos">Zapatos</NavLink>
+                    <Nav.Link as={NavLink} className="navbar-title" activeClassName="active" to="/category/zapatos">Zapatos</Nav.Link>
 
-                    <NavLink className="navbar-title" activeClassName="active" to="/category/ojotas">Ojotas</NavLink>
+                    <Nav.Link as={NavLink} className="navbar-title" activeClassName="active" to="/category/ojotas">Ojotas</Nav.Link>
 
-                    <NavLink className="navbar-title" activeClassName="active" to="/category/medias">Medias</NavLink>
+                    <Nav.Link as={NavLink} className="navbar-title" activeClassName="active" to="/category/medias">Medias</Nav.Link>
 
-                    <NavLink className="navbar-title" activeClassName="active" to="/miscompras">Mis Compras</NavLink>
+                    <Nav.Link as={NavLink} className="navbar-title" activeClassName="active" to="/miscompras">Mis Compras</Nav.Link>
 
-                    <NavLink className="navbar-title2" activeClassName="active" to="/cart"><CartIcon activeClassName="active"/>{carrito.length}</NavLink>
+                    <NavLink as={NavLink} className="navbar-title" activeClassName="active" to="/cart"><CartIcon activeClassName="active"/>{carrito.length}</NavLink>
 
                 </Nav>
 

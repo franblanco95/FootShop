@@ -1,4 +1,16 @@
 .list-fondo {
-    background-image: linear-gradient(120deg, #a1c4fd 0%, #c2e9fb 100%);
+    background-color: black;
     height: 100vh;
+}
+
+.list-row {
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    
+}
+
+.list-category {
+    text-align: center;
+    color: #eba600;
 }

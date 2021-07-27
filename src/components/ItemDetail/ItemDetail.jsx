@@ -13,13 +13,14 @@ export const ItemDetail = ({ product }) => {
 
     const notify = () => {
         toast.info(`${product.name} se ha agregado al carrito con éxito!`, {
-            position: "top-right",
+            position: "bottom-right",
             autoClose: 5000,
             hideProgressBar: false,
             closeOnClick: true,
             pauseOnHover: true,
             draggable: true,
             progress: undefined,
+        
         });
     }
 
@@ -32,11 +33,11 @@ export const ItemDetail = ({ product }) => {
 
     return (
         <>
-            <Container className="fondito mt-5 p-4">
-                <Card className="my-5 p-3">
+            <Container fluid className="detail-fondito p-4">
+                <Card className="animated fadeIn detail-row my-5 p-3">
                     <Row>
                         <Col className="detail-img-container">
-                            <img className="detail-img" src={product.img} alt="foto" />
+                            <img className="detail-img" width={400} height={400} src={product.img} alt="foto" />
                         </Col>
                         <Col>
                             <div>

@@ -12,14 +12,17 @@ export const FormComponent = () => {
     const { createOrder } = useContext(CartContext)
 
     return (
-        <Container className="fondo" fluid="md">
+        <Container className="form-fondo" fluid>
             <Row>
                 <Col className="animated fadeIn">
-                    <h2>Completar el formulario para finalizar la compra!</h2>
                     <Form className="form-container">
+
+                        <h2 className="text-center mb-4">Completar el formulario para finalizar la compra!</h2>
+
                         <Form.Group className="mb-3" controlId="formBasicName">
                             <Form.Control required className="form-input" type="text" onInput={(e) => { setName(e.target.value) }} placeholder="Nombre" />
                         </Form.Group>
+
                         <Form.Group className="mb-3" controlId="formBasicEmail">
                             <Form.Control required className="form-input" type="email" onInput={(e) => { setEmail(e.target.value) }} placeholder="Email" />
                         </Form.Group>
@@ -28,7 +31,7 @@ export const FormComponent = () => {
                             <Form.Control required className="form-input" type="tel" onInput={(e) => { setPhone(e.target.value) }} placeholder="Numero de teléfono" />
                         </Form.Group>
 
-                        <Button type= "submit" className="form-button" variant="primary" onClick={(e) => createOrder(e, name, email, phone)}>
+                        <Button type="submit" className="form-button" variant="primary" onClick={(e) => createOrder(e, name, email, phone)}>
                             Enviar
                         </Button>
                     </Form>

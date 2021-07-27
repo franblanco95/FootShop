@@ -1,11 +1,20 @@
+.form-fondo {
+    background-color: black;
+    height: 100vh;
+}
 
 .form-container {
-    width:20rem;
+    border: 3px solid cadetblue;
+    border-radius: 5px;
+    background-color: transparent;
+    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+    padding: 1rem 3rem;
+    width: 25vw;
     margin: 0 auto;
 }
+
 .form-input {
     width: 100%;
-    margin: 0 0;
     padding: 15px;
     border: none;
     border-radius: 3px;
@@ -20,7 +29,7 @@
 }
 
 .form-button {
-    width: 20rem;
+    width: 100%;
     margin: 5px 0;
     padding: 12px;
     background-color: #1dd098;

@@ -14,15 +14,14 @@
     width: 10rem;
     text-align: center;
     font-size: 1.3rem;
-    color: white;
+    color: white !important;
     font-family: 'Lato', sans-serif;
 }
 
-.navbar-title2 svg,
 .active {
     font-weight: bold;
-    color: rgb(243, 186, 64);
-    fill: rgb(243, 186, 64);
+    color: rgb(243, 186, 64) !important;
+    fill: rgb(243, 186, 64) !important;
 }
 
 .navbar-logo {
