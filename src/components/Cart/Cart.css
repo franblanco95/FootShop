@@ -38,6 +38,12 @@
 
 .cart-maintitle{
     color: white;
+    font-family: Lato;
+}
+
+.cart-subtitle{
+    color: whitesmoke;
+    
 }
 .cart-title {
     font-size: 1.3rem;

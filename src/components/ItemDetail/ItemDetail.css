@@ -1,11 +1,27 @@
 .detail-titulo {
+    font-family: Lato;
     font-size: 2rem;
     font-weight: 600;
 }
 
+.detail-top{
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+
+}
 .detail-precio {
-    font-size: 1.2rem;
-    font-weight: bold;
+    font-size: 1rem;
+    font-family: Lato;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: gray;
+    font-weight: 600;
+}
+
+.detail-span {
+    font-size: 2rem;
+    font-weight: bolder;
 }
 
 .detail-img-container {

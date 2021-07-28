@@ -4,6 +4,7 @@ import { Container, Row, Col, Card } from 'react-bootstrap';
 import { CounterComponent } from '../CounterComponent/CounterComponent';
 import { CartContext } from '../../context/cartContext'
 import { toast } from 'react-toastify';
+import StarRatings from 'react-star-ratings';
 
 
 export const ItemDetail = ({ product }) => {
@@ -20,16 +21,16 @@ export const ItemDetail = ({ product }) => {
             pauseOnHover: true,
             draggable: true,
             progress: undefined,
-        
+
         });
     }
 
     const onAdd = qty => {
         addItem({ product }, qty)
         notify()
-        
+
     }
-    const stockInCart = getItemQty({product});
+    const stockInCart = getItemQty({ product });
     const availableStock = product.stock - stockInCart;
 
 
@@ -45,8 +46,22 @@ export const ItemDetail = ({ product }) => {
                         <Col>
                             <div>
                                 <p className="detail-titulo">{product.name}</p>
+                                <div className="detail-top">
+                                    <div>
+                                        <p className="detail-precio mb-0">Precio</p>
+                                        <span className="detail-span">$ {product.price}</span>
+                                    </div>
+                                    <StarRatings
+                                        rating={product.star}
+                                        numberOfStars={5}
+                                        starRatedColor="rgb(218,165,32)"
+                                        starDimension="25px"
+                                        starSpacing="5px"
+                                        
+                                    />
+                                </div>
+                                <hr></hr>
                                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas dolorem dignissimos nostrum atque. Vel, dolore, neque tempore doloremque maiores eos, iure laboriosam et quia quod commodi odio sed alias minima.</p>
-                                <p className="detail-precio">Precio: $ {product.price}</p>
                                 {availableStock > 0 ?
                                     <>
                                         {/* <p> Stock: {product.stock} </p> */}

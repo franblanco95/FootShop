@@ -19,7 +19,7 @@ export const Cart = () => {
                             {carrito.length == 0 ?
                                 <>
                                     <img src="./imagenes/emptycart.png" />
-                                    <h1>El carrito se encuentra vacío</h1>
+                                    <h2 className="cart-subtitle">El carrito se encuentra vacío</h2>
                                 </> :
 
                                 <>

@@ -45,7 +45,7 @@ export const CounterComponent = ({ stock, onAdd }) => {
             </div>           
 
             <Link to="/cart">
-                <Button className="counter-button ms-2">Ir al Carrito</Button>
+                <Button className="counter-button-cart ms-2">Ir al Carrito</Button>
             </Link>
 
         </>

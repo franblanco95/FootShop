@@ -34,3 +34,26 @@ input[type=number]::-webkit-outer-spin-button {
   background-color: #ffb400;
   border-color: #eba600;
 }
+
+.counter-button-cart {
+  width: 12rem;
+  margin: 5px 0;
+  padding: 12px;
+  background-color: #ffb400;
+  border: none;
+  border-bottom: 5px solid #eba600;
+  box-sizing: border-box;
+  color: white;
+  font-family: Lato;
+  font-weight: 700;
+  font-size: 0.7em;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  transition: all 0.2s ease;
+  cursor: pointer;
+}
+
+.counter-button-cart:hover {
+  background-color: #1dd098;
+  border-color: #1cc08b;
+}

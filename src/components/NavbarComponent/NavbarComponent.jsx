@@ -32,7 +32,7 @@ export const NavBar = () => {
 
                     <Nav.Link as={NavLink} className="navbar-title" activeClassName="active" to="/miscompras">Mis Compras</Nav.Link>
 
-                    <NavLink as={NavLink} className="navbar-title" activeClassName="active" to="/cart"><CartIcon activeClassName="active"/>{carrito.length}</NavLink>
+                    <NavLink as={NavLink} className="navbar-title" activeClassName="active" to="/cart"><CartIcon activeClassName="active"/>{carrito.length == 0 ? '' : (carrito.length)}</NavLink>
 
                 </Nav>
 
