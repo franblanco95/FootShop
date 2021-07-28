@@ -9,7 +9,7 @@ import { toast } from 'react-toastify';
 export const ItemDetail = ({ product }) => {
     console.log(product)
 
-    const { addItem } = useContext(CartContext)
+    const { addItem, getItemQty } = useContext(CartContext)
 
     const notify = () => {
         toast.info(`${product.name} se ha agregado al carrito con éxito!`, {
@@ -27,7 +27,10 @@ export const ItemDetail = ({ product }) => {
     const onAdd = qty => {
         addItem({ product }, qty)
         notify()
+        
     }
+    const stockInCart = getItemQty({product});
+    const availableStock = product.stock - stockInCart;
 
 
 
@@ -44,10 +47,11 @@ export const ItemDetail = ({ product }) => {
                                 <p className="detail-titulo">{product.name}</p>
                                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas dolorem dignissimos nostrum atque. Vel, dolore, neque tempore doloremque maiores eos, iure laboriosam et quia quod commodi odio sed alias minima.</p>
                                 <p className="detail-precio">Precio: $ {product.price}</p>
-                                {product.stock > 0 ?
+                                {availableStock > 0 ?
                                     <>
-                                        <p> Stock: {product.stock} </p>
-                                        <CounterComponent stock={product.stock} onAdd={onAdd} />
+                                        {/* <p> Stock: {product.stock} </p> */}
+                                        <p> Stock: {availableStock} </p>
+                                        <CounterComponent stock={availableStock} onAdd={onAdd} />
                                     </> :
                                     <p>No hay stock</p>
                                 }

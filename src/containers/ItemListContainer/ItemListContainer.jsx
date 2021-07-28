@@ -20,29 +20,26 @@ export const ItemListContainer = () => {
                     return obj.categoryId === categoryId;
                 });
                 setItemsFiltrados(filtrado);
-            
 
-        } else {
-            setItemsFiltrados(_productos);
-            
+
+            } else {
+                setItemsFiltrados(_productos);
+
+            }
+            setCargando(false)
         }
-        setCargando(false)
+
+
     }
+    useEffect(() => {
+        setCargando(true)
+        filtradoCategoria(categoryId, productos)
+    }, [categoryId, productos]);
 
+    console.log(cargando)
+    if (cargando) return <Cargando />
 
-}
-useEffect(() => {
-    setCargando(true)
-    filtradoCategoria(categoryId, productos)
-}, [categoryId, productos]);
-
-console.log(cargando)
-if (cargando) return <Cargando />
-
-return (
-
-    <ItemList productos={itemsFiltrados} category={categoryId}/>
-
-
-)
+    return (
+        <ItemList productos={itemsFiltrados} category={categoryId} />
+    )
 }

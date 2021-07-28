@@ -11,7 +11,7 @@ export const CartComponentContext = ({ children }) => {
     const [totalPrice, setTotalPrice] = useState(0)
     const [productos, setProductos] = useState([])
 
-    //Traigo a los productos de la BD de Firestore
+    //Traigo a los productos de la DB de Firestore
     const getData = () => {
         const db = getFirestore();
 
@@ -31,8 +31,9 @@ export const CartComponentContext = ({ children }) => {
 
     useEffect(() => {
         getData();
-
     }, [])
+
+    //Funcion para crear orden en Firebase al finalizar la compra
 
     function createOrder(e, name, email, phone) {
         e.preventDefault()
@@ -49,6 +50,7 @@ export const CartComponentContext = ({ children }) => {
     //Controla si el elemento ya esta en el carrito
     const isInCart = (id) => carrito.some(product => product.id === id)
 
+    //Agregar Item al carrito
     const addItem = ({ product }, quantity) => {
         if (isInCart(product.id)) {
             const newCart = carrito.map(cartElement => {
@@ -61,6 +63,20 @@ export const CartComponentContext = ({ children }) => {
             setCarrito(prev => [...prev, { ...product, quantity }]);
         }
 
+    }
+
+    const getItemQty = ({ product }) => {
+        const carritoLength = carrito.length;
+        if (carritoLength === 0) {
+            return 0;
+        } else {
+            for (let i = 0; i < carritoLength; i++) {
+                if (carrito[i].id === product.id) {
+                    return carrito[i].quantity;
+                }
+            }
+            return 0;
+        }
     }
 
     const vaciarCarrito = () => {
@@ -80,6 +96,8 @@ export const CartComponentContext = ({ children }) => {
         setTotalPrice(total);
     }
 
+    //Funciones localStorage
+
     useEffect(() => {
         const localCart = localStorage.getItem('carrito');
         if (!localCart) localStorage.setItem('carrito', JSON.stringify([]));
@@ -92,7 +110,7 @@ export const CartComponentContext = ({ children }) => {
     }, [carrito])
 
     return (
-        <CartContext.Provider value={{ addItem, carrito, setCarrito, vaciarCarrito, removeItem, totalPrice, productos, setProductos, createOrder }}>
+        <CartContext.Provider value={{ addItem, carrito, setCarrito, vaciarCarrito, removeItem, totalPrice, productos, setProductos, getItemQty, createOrder }}>
             {children}
         </CartContext.Provider>
     )
