@@ -15,7 +15,7 @@ export const FormComponent = () => {
         <Container className="form-fondo" fluid>
             <Row>
                 <Col className="animated fadeIn">
-                    <Form className="form-container">
+                    <Form className="form-container" onSubmit={(e) => createOrder(e, name, email, phone)}>
 
                         <h2 className="text-center mb-4">Completar el formulario para finalizar la compra!</h2>
 
@@ -31,7 +31,7 @@ export const FormComponent = () => {
                             <Form.Control required className="form-input" type="tel" onInput={(e) => { setPhone(e.target.value) }} placeholder="Numero de teléfono" />
                         </Form.Group>
 
-                        <Button type="submit" className="form-button" variant="primary" onClick={(e) => createOrder(e, name, email, phone)}>
+                        <Button type="submit" className="form-button" variant="primary">
                             Enviar
                         </Button>
                     </Form>

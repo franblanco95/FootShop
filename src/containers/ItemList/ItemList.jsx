@@ -11,9 +11,9 @@ export function ItemList({ productos, category }) {
                 <Row>
                     <h2 className="list-category">Categoría: {category}</h2>
                     <Col className="list-row">
-                        {productos.map((element, index) => {
+                        {productos.map((element) => {
                             return (
-                                <div key={index}>
+                                <div key={element.id}>
                                     <CardComponent img={element.img} title={element.name} price={element.price} id={element.id} />
                                 </div >
                             )

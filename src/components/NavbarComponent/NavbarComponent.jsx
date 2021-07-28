@@ -20,19 +20,19 @@ export const NavBar = () => {
 
                 <Nav className="d-flex justify-content-evenly my-lg-0" navbarScroll>
 
-                    <Nav.Link as={NavLink} className="navbar-title" exact={true} activeClassName="active" to="/">Inicio</Nav.Link>
+                    <Nav.Link as={NavLink} className="navbar-title" exact to="/">Inicio</Nav.Link>
 
-                    <Nav.Link as={NavLink} className="navbar-title" activeClassName="active" to="/category/zapatillas">Zapatillas</Nav.Link>
+                    <Nav.Link as={NavLink} className="navbar-title" to="/category/zapatillas">Zapatillas</Nav.Link>
 
-                    <Nav.Link as={NavLink} className="navbar-title" activeClassName="active" to="/category/zapatos">Zapatos</Nav.Link>
+                    <Nav.Link as={NavLink} className="navbar-title" to="/category/zapatos">Zapatos</Nav.Link>
 
-                    <Nav.Link as={NavLink} className="navbar-title" activeClassName="active" to="/category/ojotas">Ojotas</Nav.Link>
+                    <Nav.Link as={NavLink} className="navbar-title" to="/category/ojotas">Ojotas</Nav.Link>
 
-                    <Nav.Link as={NavLink} className="navbar-title" activeClassName="active" to="/category/medias">Medias</Nav.Link>
+                    <Nav.Link as={NavLink} className="navbar-title" to="/category/medias">Medias</Nav.Link>
 
-                    <Nav.Link as={NavLink} className="navbar-title" activeClassName="active" to="/miscompras">Mis Compras</Nav.Link>
+                    <Nav.Link as={NavLink} className="navbar-title" to="/miscompras">Mis Compras</Nav.Link>
 
-                    <NavLink as={NavLink} className="navbar-title" activeClassName="active" to="/cart"><CartIcon activeClassName="active"/>{carrito.length == 0 ? '' : (carrito.length)}</NavLink>
+                    <NavLink as={NavLink} className="navbar-title" to="/cart"><CartIcon activeClassName="active"/>{carrito.length == 0 ? '' : (carrito.length)}</NavLink>
 
                 </Nav>
 

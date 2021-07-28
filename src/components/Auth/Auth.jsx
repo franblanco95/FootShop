@@ -28,7 +28,7 @@ export const Auth = () => {
         <>
 
             {!user &&
-                <div className="auth-container">
+                <div className="animated fadeIn auth-container">
                     <h1 className="auth-titulo">Bienvenido a FootShop!</h1>
                     <p className="auth-sub">Ingresa con tu email y contraseña</p>
 

@@ -12,7 +12,7 @@ export const HomeContainer = () => {
     const { productos } = useContext(CartContext)
 
     return (
-        <Container fluid className="animated fadeIn home-fondo">
+        <Container fluid className="home-fondo">
             <Row className="text-center py-5 d-flex justify-content-center">
 
                 {productos ?
