@@ -11,6 +11,7 @@ import { Error404 } from './components/404/Error404'
 import { CartComponentContext } from './context/cartContext';
 import { HomeContainer } from './containers/HomeContainer/HomeContainer';
 import { FormComponent } from './components/Form/Form';
+import { Auth } from './components/Auth/Auth';
 
 function App() {
 
@@ -25,6 +26,7 @@ function App() {
             <Route path="/category/:categoryId" component={ItemListContainer} />
             <Route path="/item/:id" component={ItemDetailContainer} />
             <Route path="/cart" component={Cart} />
+            <Route path="/login" component={Auth} />
             <Route path="/formulario" component={FormComponent} />
             <Route path="*" component={Error404} />
           </Switch>

@@ -1,6 +1,5 @@
 .card-imagen {
-    max-width: 200px;
-    max-height: 400px;
+    object-fit: cover;
 }
 
 .card-container {

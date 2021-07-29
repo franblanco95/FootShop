@@ -16,23 +16,17 @@ export const NavBar = () => {
             </Navbar.Brand>
 
             <Navbar.Toggle aria-controls="navbarScroll" />
-            <Navbar.Collapse className="justify-content-evenly" id="navbarScroll">
+            <Navbar.Collapse className="justify-content-end" id="navbarScroll">
 
-                <Nav className="d-flex justify-content-evenly my-lg-0" navbarScroll>
+                <Nav navbarScroll>
 
                     <Nav.Link as={NavLink} className="navbar-title" exact to="/">Inicio</Nav.Link>
 
-                    <Nav.Link as={NavLink} className="navbar-title" to="/category/zapatillas">Zapatillas</Nav.Link>
-
-                    <Nav.Link as={NavLink} className="navbar-title" to="/category/zapatos">Zapatos</Nav.Link>
-
-                    <Nav.Link as={NavLink} className="navbar-title" to="/category/ojotas">Ojotas</Nav.Link>
-
-                    <Nav.Link as={NavLink} className="navbar-title" to="/category/medias">Medias</Nav.Link>
-
                     <Nav.Link as={NavLink} className="navbar-title" to="/miscompras">Mis Compras</Nav.Link>
 
-                    <NavLink as={NavLink} className="navbar-title" to="/cart"><CartIcon activeClassName="active"/>{carrito.length == 0 ? '' : (carrito.length)}</NavLink>
+                    <Nav.Link as={NavLink} className="navbar-title" to="/login">Iniciar Sesion</Nav.Link>
+
+                    <NavLink as={NavLink} className="navbar-title me-5" to="/cart"><CartIcon activeClassName="active" />{carrito.length == 0 ? '' : (carrito.length)}</NavLink>
 
                 </Nav>
 

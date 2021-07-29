@@ -1,4 +1,11 @@
+.auth-fondo {
+    background-color: black;
+    height: 100vh;
+}
+
 .auth-container {
+    margin: 100px auto;
+    text-align: center;
     border: 3px solid cadetblue;
     border-radius: 5px;
     background-color: transparent;
@@ -11,7 +18,6 @@
 }
 
 .auth-titulo {
-    font-size: 2.5-rem;
     color: #d6d8e1;
 }
 
@@ -21,8 +27,9 @@
 }
 
 .input-container {
-    width:20rem;
+    width: 20rem;
 }
+
 .auth-input {
     width: 100%;
     margin: 0 0;

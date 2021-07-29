@@ -1,10 +1,46 @@
 .home-fondo {
-    background-image: linear-gradient(90deg, rgb(0, 0, 0), rgba(0, 0, 0, 0) ), url('https://wallpapercave.com/wp/UchG14Z.jpg');
+    background-image: linear-gradient(90deg, rgb(0, 0, 0), rgba(0, 0, 0, 0)), url('https://wallpapercave.com/wp/UchG14Z.jpg');
     background-repeat: no-repeat;
     background-size: contain;
-    background-position:right;
-    height: 100vh;
+    background-position: right;
+    height: 100%;
     background-color: black;
     backdrop-filter: blur(20px);
+}
 
+.home-category {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    margin: 1rem;
+    padding: 5px 15px;
+    font-family: 'Lato', sans-serif;
+    font-size: 1.1rem;
+    background-color: rgb(255, 217, 0);
+    color: black;
+    border-radius: 1rem;
+}
+
+.home-category:hover {
+    font-weight: 500;
+    transition: 250ms;
+}
+
+.allcategories {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.allproducts {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    margin: 0 300px;
+
+}
+
+.eachproduct {
+    margin: 100px;
 }
