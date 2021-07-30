@@ -9,7 +9,7 @@ export function ItemList({ productos, category }) {
         <>
             <Container fluid className="list-fondo p-5">
                 <Row>
-                    <h2 className="list-category">Categoría: {category}</h2>
+                    <h2 className="list-category">{category}</h2>
                     <Col className="list-row">
                         {productos.map((element) => {
                             return (

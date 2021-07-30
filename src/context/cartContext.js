@@ -65,6 +65,7 @@ export const CartComponentContext = ({ children }) => {
 
     }
 
+    // Calculo cantidad de cada producto en carrito para actualizar stock en item detail
     const getItemQty = ({ product }) => {
         const carritoLength = carrito.length;
         if (carritoLength === 0) {
