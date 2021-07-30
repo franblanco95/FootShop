@@ -30,6 +30,10 @@ export const CounterComponent = ({ stock, onAdd }) => {
         }
     }
 
+    const reset = () => {
+        setCounter(1)
+    }
+
     return (
         <>
             <div className="counter-container">
@@ -39,10 +43,10 @@ export const CounterComponent = ({ stock, onAdd }) => {
                     <Button onClick={sumar}>+</Button>
                 </InputGroup>
             </div>
-            <Button onClick={() => onAdd(counter)} className="counter-button">Agregar al Carrito</Button>
+            <Button onClick={() => { onAdd(counter); reset() }} className="counter-button">Agregar al Carrito</Button>
             <div className="toast-container">
                 <ToastContainer />
-            </div>           
+            </div>
 
             <Link to="/cart">
                 <Button className="counter-button-cart ms-2">Ir al Carrito</Button>

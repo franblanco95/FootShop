@@ -4,6 +4,7 @@
 
 .card-container {
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    background-color: rgba(255, 255, 255, 0.1);
 }
 
 .card-container:hover {
@@ -19,9 +20,15 @@
     text-align: center;
 }
 
+.card-title{
+    font-family: Lato;
+    color: #eba600;
+}
+
 .card-price {
     font-weight: 700;
     font-size: 1.3rem;
+    color: white;
 }
 
 /* .card-button {

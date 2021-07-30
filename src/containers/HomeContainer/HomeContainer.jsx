@@ -48,13 +48,16 @@ export const HomeContainer = () => {
                 <Link className="home-category" to="/category/medias">Medias</Link>
             </div>
             <div className="allproducts">
-                {productos.map((element) => {
+                {productos.length == 0 ? 
+                productos.map((element) => {
                     return (
                         <div key={element.id}>
                             <CardComponent className="eachproduct" img={element.img} title={element.name} price={element.price} id={element.id} />
                         </div >
                     )
-                })}
+                }) :
+                (<Cargando/>)
+            }
             </div>
         </Container >
 
