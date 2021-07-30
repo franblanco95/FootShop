@@ -18,6 +18,7 @@
     font-family: 'Lato', sans-serif;
 }
 
+.active svg,
 .active {
     font-weight: bold;
     color: rgb(243, 186, 64) !important;
