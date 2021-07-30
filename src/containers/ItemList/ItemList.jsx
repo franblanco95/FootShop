@@ -4,7 +4,6 @@ import { CardComponent } from "../../components/CardComponent/CardComponent"
 import { Col, Container, Row } from 'react-bootstrap'
 
 export function ItemList({ productos, category }) {
-    console.log(productos)
     return (
         <>
             <Container fluid className="list-fondo p-5">

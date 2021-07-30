@@ -7,9 +7,9 @@ export const Cargando = () => {
         <>
             <Container className="spiner-fondo" fluid>
                 <Row className="text-center py-5 align-items-center">
-                    <div class="spinner">
-                        <div class="cube1"></div>
-                        <div class="cube2"></div>
+                    <div className="spinner">
+                        <div className="cube1"></div>
+                        <div className="cube2"></div>
                     </div>
                     <h3 className="spiner-text">Cargando</h3>
                 </Row>

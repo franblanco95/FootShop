@@ -16,18 +16,18 @@ export const Cart = () => {
                         <ul className="cart-body">
                             <h1 className="cart-maintitle">Carrito</h1>
 
-                            {carrito.length == 0 ?
+                            {carrito.length === 0 ?
                                 <>
-                                    <img src="./imagenes/emptycart.png" />
+                                    <img src="./imagenes/emptycart.png" alt="emptycart"/>
                                     <h2 className="cart-subtitle">El carrito se encuentra vacío</h2>
                                 </> :
 
                                 <>
 
                                     {carrito.map((item, index) => {
-                                        return <>
+                                        return (
                                             <li key={index} className="cart-list">
-                                                <img width={125} height={125} className="cart-img" src={item.img} />
+                                                <img width={125} height={125} className="cart-img" src={item.img} alt={item.name}/>
                                                 <div className="cart-data">
                                                     <h3 className="cart-title">{item.name}</h3>
                                                     <div className="cart-actions">
@@ -37,12 +37,12 @@ export const Cart = () => {
                                                     </div>
                                                 </div>
 
-                                            </li>
+                                            </li>)
 
-                                        </>
+                                        
                                     })}
 
-                                    <div div className="cart-total"><span>Total: $ {totalPrice}</span> </div>
+                                    <div className="cart-total"><span>Total: $ {totalPrice}</span> </div>
                                     <Button className="cart-button me-4" onClick={vaciarCarrito}>Vaciar Carrito</Button>
                                     <Button as={NavLink} to="/formulario" className="cart-button">Terminar Compra</Button>
                                 </>

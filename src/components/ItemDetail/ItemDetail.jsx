@@ -3,12 +3,12 @@ import './ItemDetail.css'
 import { Container, Row, Col, Card } from 'react-bootstrap';
 import { CounterComponent } from '../CounterComponent/CounterComponent';
 import { CartContext } from '../../context/cartContext'
+import { Cargando } from '../Spiner/Spiner'
 import { toast } from 'react-toastify';
 import StarRatings from 'react-star-ratings';
 
 
 export const ItemDetail = ({ product }) => {
-    console.log(product)
 
     const { addItem, getItemQty } = useContext(CartContext)
 
@@ -31,8 +31,8 @@ export const ItemDetail = ({ product }) => {
 
     }
     const stockInCart = getItemQty({ product });
-    const availableStock = product.stock - stockInCart;
 
+    const availableStock = product.stock - stockInCart;
 
 
     return (
@@ -40,38 +40,42 @@ export const ItemDetail = ({ product }) => {
             <Container fluid className="detail-fondito p-4">
                 <Card className="animated fadeIn detail-row my-5 p-3">
                     <Row>
-                        <Col className="detail-img-container">
-                            <img className="detail-img" width={400} height={400} src={product.img} alt="foto" />
-                        </Col>
-                        <Col>
-                            <div>
-                                <p className="detail-titulo">{product.name}</p>
-                                <div className="detail-top">
+                        {!product ?
+                            (<Cargando />) :
+                            <>
+                                <Col className="detail-img-container">
+                                    <img className="detail-img" width={400} height={400} src={product.img} alt="foto" />
+                                </Col>
+                                <Col>
                                     <div>
-                                        <p className="detail-precio mb-0">Precio</p>
-                                        <span className="detail-span">$ {product.price}</span>
+                                        <p className="detail-titulo">{product.name}</p>
+                                        <div className="detail-top">
+                                            <div>
+                                                <p className="detail-precio mb-0">Precio</p>
+                                                <span className="detail-span">$ {product.price}</span>
+                                            </div>
+                                            <StarRatings
+                                                rating={product.star}
+                                                numberOfStars={5}
+                                                starRatedColor="rgb(218,165,32)"
+                                                starDimension="25px"
+                                                starSpacing="5px"
+
+                                            />
+                                        </div>
+                                        <hr></hr>
+                                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas dolorem dignissimos nostrum atque. Vel, dolore, neque tempore doloremque maiores eos, iure laboriosam et quia quod commodi odio sed alias minima.</p>
+                                        {availableStock > 0 ?
+                                            <>
+                                                {/* <p> Stock: {product.stock} </p> */}
+                                                <p> Stock: {availableStock} </p>
+                                                <CounterComponent stock={availableStock} onAdd={onAdd} />
+                                            </> :
+                                            <p>No hay stock</p>
+                                        }
                                     </div>
-                                    <StarRatings
-                                        rating={product.star}
-                                        numberOfStars={5}
-                                        starRatedColor="rgb(218,165,32)"
-                                        starDimension="25px"
-                                        starSpacing="5px"
-                                        
-                                    />
-                                </div>
-                                <hr></hr>
-                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas dolorem dignissimos nostrum atque. Vel, dolore, neque tempore doloremque maiores eos, iure laboriosam et quia quod commodi odio sed alias minima.</p>
-                                {availableStock > 0 ?
-                                    <>
-                                        {/* <p> Stock: {product.stock} </p> */}
-                                        <p> Stock: {availableStock} </p>
-                                        <CounterComponent stock={availableStock} onAdd={onAdd} />
-                                    </> :
-                                    <p>No hay stock</p>
-                                }
-                            </div>
-                        </Col>
+                                </Col>
+                            </>}
                     </Row>
                 </Card>
             </Container>

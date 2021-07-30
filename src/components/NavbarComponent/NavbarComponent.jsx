@@ -26,7 +26,7 @@ export const NavBar = () => {
 
                     <Nav.Link as={NavLink} className="navbar-title" to="/login">Iniciar Sesion</Nav.Link>
 
-                    <NavLink as={NavLink} className="navbar-title me-5" to="/cart"><CartIcon activeClassName="active" />{carrito.length == 0 ? '' : (carrito.length)}</NavLink>
+                    <NavLink as={NavLink} className="navbar-title me-5" to="/cart"><CartIcon activeClassName="active" />{carrito.length === 0 ? '' : (carrito.length)}</NavLink>
 
                 </Nav>
 

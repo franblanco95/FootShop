@@ -36,7 +36,6 @@ export const ItemListContainer = () => {
         filtradoCategoria(categoryId, productos)
     }, [categoryId, productos]);
 
-    console.log(cargando)
     if (cargando) return <Cargando />
 
     return (

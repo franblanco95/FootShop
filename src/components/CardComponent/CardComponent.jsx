@@ -1,16 +1,8 @@
 import './CardComponent.css'
-
 import { Card, Button } from 'react-bootstrap';
 import { Link } from 'react-router-dom'
-import { useEffect } from 'react';
 
 export const CardComponent = ({ img, title, price, id }) => {
-
-    useEffect(() => {    
-        return () => {
-            console.log("asd")
-        }
-    }, [])
 
     return (
         <>
