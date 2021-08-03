@@ -31,13 +31,13 @@ export const Cart = () => {
                                         {carrito.map((item, index) => {
                                             return (
                                                 <li key={index} className="cart-list">
-                                                    <img width={125} height={125} className="cart-img" src={item.img} alt={item.name} />
+                                                    <img width={135} height={110} className="cart-img" src={item.img} alt={item.name} />
                                                     <div className="cart-data">
                                                         <h3 className="cart-title">{item.name}</h3>
                                                         <div className="cart-actions">
                                                             <span className="cart-item">Cantidad: {item.quantity}</span>
-                                                            <span className="cart-item mx-4"> $ {item.price}</span>
-                                                            <Trash className="cart-icon" onClick={() => removeItem(index)} />
+                                                            <span className="cart-item">Precio: $ {item.price}</span>
+                                                            <Trash className="cart-icon me-3" onClick={() => removeItem(index)} />
                                                         </div>
                                                     </div>
 
