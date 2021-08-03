@@ -13,42 +13,46 @@ export const Cart = () => {
             <Container className="cart-fondo" fluid>
                 <Row>
                     <Col className="animated fadeIn text-center d-flex justify-content-center">
-                        <ul className="cart-body">
-                            <h1 className="cart-maintitle">Carrito</h1>
-
-                            {carrito.length === 0 ?
-                                <>
-                                    <img src="./imagenes/emptycart.png" alt="emptycart"/>
+                        {carrito.length === 0 ?
+                            <>
+                                <div>
+                                    <img src="./imagenes/emptycart.png" alt="emptycart" />
                                     <h2 className="cart-subtitle">El carrito se encuentra vacío</h2>
-                                </> :
+                                </div>
+                            </> :
 
-                                <>
-
-                                    {carrito.map((item, index) => {
-                                        return (
-                                            <li key={index} className="cart-list">
-                                                <img width={125} height={125} className="cart-img" src={item.img} alt={item.name}/>
-                                                <div className="cart-data">
-                                                    <h3 className="cart-title">{item.name}</h3>
-                                                    <div className="cart-actions">
-                                                        <span className="cart-item">Precio: $ {item.price}</span>
-                                                        <span className="cart-item mx-4">Cantidad: {item.quantity}</span>
-                                                        <Trash className="cart-icon" onClick={() => removeItem(index)} />
+                            <>
+                                <div className="cart-body">
+                                    <div className="cart-header">
+                                        <span className="cart-maintitle">Carrito</span>
+                                        <span className="cart-clear" onClick={vaciarCarrito}>vaciar carrito</span>
+                                    </div>
+                                    <ul>
+                                        {carrito.map((item, index) => {
+                                            return (
+                                                <li key={index} className="cart-list">
+                                                    <img width={125} height={125} className="cart-img" src={item.img} alt={item.name} />
+                                                    <div className="cart-data">
+                                                        <h3 className="cart-title">{item.name}</h3>
+                                                        <div className="cart-actions">
+                                                            <span className="cart-item">Cantidad: {item.quantity}</span>
+                                                            <span className="cart-item mx-4"> $ {item.price}</span>
+                                                            <Trash className="cart-icon" onClick={() => removeItem(index)} />
+                                                        </div>
                                                     </div>
-                                                </div>
 
-                                            </li>)
+                                                </li>)
 
-                                        
-                                    })}
+
+                                        })}
+                                    </ul>
 
                                     <div className="cart-total"><span>Total: $ {totalPrice}</span> </div>
-                                    <Button className="cart-button me-4" onClick={vaciarCarrito}>Vaciar Carrito</Button>
                                     <Button as={NavLink} to="/formulario" className="cart-button">Terminar Compra</Button>
-                                </>
-                            }
+                                </div>
+                            </>
 
-                        </ul>
+                        }
 
                     </Col>
 
