@@ -8,9 +8,16 @@
     border-radius: 5px;
     background-color: transparent;
     box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
-    padding: 1rem 3rem;
-    width: 25vw;
+    padding: 1rem;
+    max-width: 30rem;
     margin: 0 auto;
+}
+
+.form-header{
+    color: white;
+    font-family: Lato;
+    text-transform: uppercase;
+    margin-bottom: 1rem;
 }
 
 .form-input {

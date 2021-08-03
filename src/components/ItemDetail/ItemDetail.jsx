@@ -47,33 +47,31 @@ export const ItemDetail = ({ product }) => {
                                     <img className="detail-img" width={400} height={400} src={product.img} alt="foto" />
                                 </Col>
                                 <Col>
-                                    <div>
-                                        <p className="detail-titulo">{product.name}</p>
-                                        <div className="detail-top">
-                                            <div>
-                                                <p className="detail-precio mb-0">Precio</p>
-                                                <span className="detail-span">$ {product.price}</span>
-                                            </div>
-                                            <StarRatings
-                                                rating={product.star}
-                                                numberOfStars={5}
-                                                starRatedColor="rgb(218,165,32)"
-                                                starDimension="25px"
-                                                starSpacing="5px"
 
-                                            />
-                                        </div>
-                                        <hr></hr>
-                                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas dolorem dignissimos nostrum atque. Vel, dolore, neque tempore doloremque maiores eos, iure laboriosam et quia quod commodi odio sed alias minima.</p>
-                                        {availableStock > 0 ?
-                                            <>
-                                                {/* <p> Stock: {product.stock} </p> */}
-                                                <p> Stock: {availableStock} </p>
-                                                <CounterComponent stock={availableStock} onAdd={onAdd} />
-                                            </> :
-                                            <p>No hay stock</p>
-                                        }
+                                    <p className="detail-titulo">{product.name}</p>
+                                    <p className="detail-precio">Precio</p>
+                                    <div className="detail-header">
+                                        <span className="detail-span">$ {product.price}</span>
+                                        <StarRatings
+                                            rating={product.star}
+                                            numberOfStars={5}
+                                            starRatedColor="rgb(218,165,32)"
+                                            starDimension="25px"
+                                            starSpacing="5px"
+
+                                        />
+
                                     </div>
+                                    <hr></hr>
+                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas dolorem dignissimos nostrum atque. Vel, dolore, neque tempore doloremque maiores eos, iure laboriosam et quia quod commodi odio sed alias minima.</p>
+                                    {availableStock > 0 ?
+                                        <>
+                                            <p>Stock: {availableStock} </p>
+                                            <CounterComponent stock={availableStock} onAdd={onAdd} />
+                                        </> :
+                                        <p>No hay stock</p>
+                                    }
+
                                 </Col>
                             </>}
                     </Row>

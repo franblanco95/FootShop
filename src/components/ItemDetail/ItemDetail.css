@@ -2,12 +2,13 @@
     font-family: Lato;
     font-size: 2rem;
     font-weight: 600;
+    margin: 0.2rem 0;
 }
 
-.detail-top{
+.detail-header{
     display: flex;
     justify-content: space-between;
-    align-items: flex-end;
+    align-items: center;
 
 }
 .detail-precio {
@@ -17,6 +18,8 @@
     letter-spacing: 1px;
     color: gray;
     font-weight: 600;
+    margin: 0;
+
 }
 
 .detail-span {
@@ -27,14 +30,17 @@
 .detail-img-container {
     display: flex;
     justify-content: center;
+    align-items: center;
 }
 
 .detail-img {
+    border: 3px solid cadetblue;
+    border-radius: 3%;
     object-fit: contain;  
 }
 
 .detail-row{
-    width: 50vw;
+    max-width: 56rem;
     margin: 0 auto;
 }
 

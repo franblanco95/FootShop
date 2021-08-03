@@ -14,10 +14,10 @@ export const FormComponent = () => {
     return (
         <Container className="form-fondo" fluid>
             <Row>
-                <Col className="animated fadeIn">
-                    <Form className="form-container" onSubmit={(e) => createOrder(e, name, email, phone)}>
+                <Col className="animated fadeIn form-container">
 
-                        <h2 className="text-center mb-4">Completar el formulario para finalizar la compra!</h2>
+                    <p className="form-header">Dirección de envío</p>
+                    <Form onSubmit={(e) => createOrder(e, name, email, phone)}>
 
                         <Form.Group className="mb-3" controlId="formBasicName">
                             <Form.Control required className="form-input" type="text" onInput={(e) => { setName(e.target.value) }} placeholder="Nombre" />

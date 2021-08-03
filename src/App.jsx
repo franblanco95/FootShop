@@ -27,7 +27,7 @@ function App() {
             <Route path="/item/:id" component={ItemDetailContainer} />
             <Route path="/cart" component={Cart} />
             <Route path="/login" component={Auth} />
-            <Route path="/formulario" component={FormComponent} />
+            <Route path="/checkout" component={FormComponent} />
             <Route path="*" component={Error404} />
           </Switch>
         </BrowserRouter>

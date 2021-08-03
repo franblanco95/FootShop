@@ -48,7 +48,7 @@ export const Cart = () => {
                                     </ul>
 
                                     <div className="cart-total"><span>Total: $ {totalPrice}</span> </div>
-                                    <Button as={NavLink} to="/formulario" className="cart-button">Terminar Compra</Button>
+                                    <Button as={NavLink} to="/checkout" className="cart-button">Terminar Compra</Button>
                                 </div>
                             </>
 
