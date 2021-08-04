@@ -12,6 +12,7 @@ import { CartComponentContext } from './context/cartContext';
 import { HomeContainer } from './containers/HomeContainer/HomeContainer';
 import { FormComponent } from './components/Form/Form';
 import { Auth } from './components/Auth/Auth';
+import { Order } from './components/Order/Order'
 
 function App() {
 
@@ -28,6 +29,7 @@ function App() {
             <Route path="/cart" component={Cart} />
             <Route path="/login" component={Auth} />
             <Route path="/checkout" component={FormComponent} />
+            <Route path="/orders" component={Order} />
             <Route path="*" component={Error404} />
           </Switch>
         </BrowserRouter>

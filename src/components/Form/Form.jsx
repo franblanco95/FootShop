@@ -1,5 +1,6 @@
 import './Form.css'
 import React, { useState, useContext } from 'react'
+import { Link } from 'react-router-dom'
 import { Container, Row, Form, Button, Col } from 'react-bootstrap'
 import { CartContext } from '../../context/cartContext'
 
@@ -31,9 +32,10 @@ export const FormComponent = () => {
                             <Form.Control required className="form-input" type="tel" onInput={(e) => { setPhone(e.target.value) }} placeholder="Numero de teléfono" />
                         </Form.Group>
 
-                        <Button type="submit" className="form-button" variant="primary">
-                            Enviar
-                        </Button>
+                        {/* <Link to="/orders"> */}
+                            <Button type="submit" className="form-button" variant="primary">Enviar</Button>
+                        {/* </Link> */}
+
                     </Form>
                 </Col>
             </Row>

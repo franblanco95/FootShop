@@ -10,6 +10,7 @@ export const CartComponentContext = ({ children }) => {
     const [carrito, setCarrito] = useState([])
     const [totalPrice, setTotalPrice] = useState(0)
     const [productos, setProductos] = useState([])
+    const [orders, setOrders] = useState([])
 
     //Traigo a los productos de la DB de Firestore
     const getData = () => {
@@ -43,6 +44,22 @@ export const CartComponentContext = ({ children }) => {
         db.collection("orders").add(order).then(({ id }) => {
             console.log(id);
         });
+    }
+
+    //Funcion para traer orders ya creadas de firebase
+
+    const getOrders = () => {
+        const db = getFirestore();
+        const itemsCollection = db.collection('orders');
+        itemsCollection.get().then((value) => {
+            if (value.size === 0){
+                console.log('No results')
+            }
+            const aux = value.docs.map(doc => {
+                return {...doc.data(), id: doc.id}
+            });
+            setOrders(aux)
+        })
     }
 
 
@@ -109,7 +126,7 @@ export const CartComponentContext = ({ children }) => {
     }, [carrito])
 
     return (
-        <CartContext.Provider value={{ addItem, carrito, setCarrito, vaciarCarrito, removeItem, totalPrice, productos, setProductos, getItemQty, createOrder }}>
+        <CartContext.Provider value={{ addItem, carrito, setCarrito, vaciarCarrito, removeItem, totalPrice, productos, setProductos, getItemQty, createOrder, getOrders, orders }}>
             {children}
         </CartContext.Provider>
     )

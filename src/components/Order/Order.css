@@ -1,0 +1,32 @@
+.order-fondo {
+    background-color: black;
+    height: 100vh;
+}
+
+.order-container ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.order-container {
+    width: 30rem;
+    margin: 1rem auto;
+    padding: 1rem;
+    border-radius: 7px;
+    border: 3px solid cadetblue;
+    border-radius: 5px;
+    background-color: transparent;
+    color: white;
+}
+
+.order-card {
+    margin-bottom: 1rem !important;
+}
+
+.order-title {
+    color: #ffb400;
+    font-family: Lato;
+    font-weight: bold;
+    margin: 0;
+}
