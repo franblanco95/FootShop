@@ -3,8 +3,11 @@
 }
 
 .card-container {
+    padding: 0 !important;
+    border: 1px solid white;
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-    background-color: rgba(255, 255, 255, 0.1);
+    background: linear-gradient(to top, black 0%, black 39%);
+
 }
 
 .card-container:hover {

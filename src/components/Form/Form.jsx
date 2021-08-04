@@ -33,7 +33,7 @@ export const FormComponent = () => {
                         </Form.Group>
 
                         {/* <Link to="/orders"> */}
-                            <Button type="submit" className="form-button" variant="primary">Enviar</Button>
+                            <Button type="submit"  className="form-button" variant="primary"><Link to="/orders">Enviar</Link></Button>
                         {/* </Link> */}
 
                     </Form>
