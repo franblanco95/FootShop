@@ -1,6 +1,7 @@
 import './Order.css'
 import React, { useEffect, useContext } from 'react'
 import { Container, Row, Col } from 'react-bootstrap'
+import { Trash } from 'react-bootstrap-icons'
 import { CartContext } from '../../context/cartContext'
 import { Cargando } from '../Spiner/Spiner'
 
@@ -12,7 +13,7 @@ export const Order = () => {
 
     useEffect(() => {
         getOrders();
-    },[])
+    }, [])
 
     return (
         <Container fluid className="order-fondo">
@@ -28,7 +29,10 @@ export const Order = () => {
                                     return (
                                         <ul className="order-card" key={order.id}>
                                             {console.log(order)}
-                                            <p className="order-title">ORDER</p>
+                                            <div className="order-header">
+                                                <p className="order-title">ORDER</p>
+                                                <Trash />
+                                            </div>
                                             <p className="order-id">({order.id})</p>
                                             <hr></hr>
                                             <li><b>Nombre: </b>{order.buyer.name}</li>
@@ -37,7 +41,7 @@ export const Order = () => {
                                             <hr></hr>
                                             {order.item.map((item) => {
                                                 return (
-                                                    <li key={item.id}>
+                                                    <li className="order-products" key={item.id}>
                                                         <span>Producto: {item.name}</span>
                                                         <span>Precio: $ {item.price}</span>
                                                         <span>Cantidad: x{item.quantity}</span>
