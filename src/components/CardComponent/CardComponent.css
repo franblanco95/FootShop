@@ -4,7 +4,7 @@
 
 .card-container {
     padding: 0 !important;
-    border: 1px solid white;
+    border: 1px solid cadetblue;
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
     background: linear-gradient(to top, black 0%, black 39%);
 
@@ -12,7 +12,7 @@
 
 .card-container:hover {
     -webkit-box-shadow: 0px 7px 15px 2px rgba(236, 236, 236, 0.44);
-    box-shadow: 0px 7px 15px 2px rgba(255, 253, 253, 0.44);
+    box-shadow: 0px 7px 15px 2px rgba(8, 155, 98, 0.44);
     transition: all 200ms ease-in-out;
 }
 
@@ -25,12 +25,13 @@
 
 .card-title{
     font-family: Lato;
+    font-size: 1.4em;
     color: #eba600;
 }
 
 .card-price {
     font-weight: 700;
-    font-size: 1.3rem;
+    font-size: 1.2em;
     color: white;
 }
 

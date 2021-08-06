@@ -23,6 +23,7 @@ export const FormComponent = () => {
                         createOrder(e, name, email, phone);
                         history.push("/orders")
                     }}>
+                        {/* hook que me redirige a orders dentro del onSubmit, pq link lo pisaba */}
 
                         <Form.Group className="mb-3" controlId="formBasicName">
                             <Form.Control required className="form-input" type="text" onInput={(e) => { setName(e.target.value) }} placeholder="Nombre" />
@@ -36,9 +37,9 @@ export const FormComponent = () => {
                             <Form.Control required className="form-input" type="tel" onInput={(e) => { setPhone(e.target.value) }} placeholder="Numero de teléfono" />
                         </Form.Group>
 
-                        
-                            <Button type="submit"  className="form-button" variant="primary">Enviar</Button>
-                        
+
+                        <Button type="submit" className="form-button" variant="primary">Enviar</Button>
+
 
                     </Form>
                 </Col>

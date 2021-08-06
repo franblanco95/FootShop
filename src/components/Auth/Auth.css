@@ -1,10 +1,9 @@
 .auth-fondo {
     background-color: black;
-    height: 100vh;
 }
 
 .auth-container {
-    margin: 100px auto;
+    margin: 50px auto;
     text-align: center;
     border: 3px solid cadetblue;
     border-radius: 5px;

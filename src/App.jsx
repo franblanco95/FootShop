@@ -13,28 +13,30 @@ import { HomeContainer } from './containers/HomeContainer/HomeContainer';
 import { FormComponent } from './components/Form/Form';
 import { Auth } from './components/Auth/Auth';
 import { Order } from './components/Order/Order'
+import { Footer } from './components/Footer/Footer';
 
 function App() {
 
   return (
     <>
-      <CartComponentContext>
+        <CartComponentContext>
 
-        <BrowserRouter>
-          <NavBar />
-          <Switch>
-            <Route exact path="/" component={HomeContainer} />
-            <Route path="/category/:categoryId" component={ItemListContainer} />
-            <Route path="/item/:id" component={ItemDetailContainer} />
-            <Route path="/cart" component={Cart} />
-            <Route path="/login" component={Auth} />
-            <Route path="/checkout" component={FormComponent} />
-            <Route path="/orders" component={Order} />
-            <Route path="*" component={Error404} />
-          </Switch>
-        </BrowserRouter>
+          <BrowserRouter>
+            <NavBar />
+            <Switch>
+              <Route exact path="/" component={HomeContainer} />
+              <Route path="/category/:categoryId" component={ItemListContainer} />
+              <Route path="/item/:id" component={ItemDetailContainer} />
+              <Route path="/cart" component={Cart} />
+              <Route path="/login" component={Auth} />
+              <Route path="/checkout" component={FormComponent} />
+              <Route path="/orders" component={Order} />
+              <Route path="*" component={Error404} />
+            </Switch>
+            <Footer />
+          </BrowserRouter>
 
-      </CartComponentContext >
+        </CartComponentContext >
     </>
   );
 }

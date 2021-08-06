@@ -1,10 +1,7 @@
 .imagen {
-    width: 40%;
+    width: 35rem;
 }
 
 .fondo-error {
-
-        background-color: black;
-        height: 100vh;
-    
+    background-color: transparent;
 }

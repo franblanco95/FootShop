@@ -1,0 +1,24 @@
+.footer-fondo {
+    background-color: black;
+    padding: 1rem 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: auto;
+}
+
+.footer-logo {
+    width: 9rem;
+}
+
+.footer-hr {
+    color: gray;
+    margin: 20px auto;
+    width: 25vw;
+}
+
+.footer-text{
+    color: gray;
+    text-align: center;
+    max-width: 600px;
+}

@@ -1,4 +1,5 @@
 /* Animaciones Fade*/
+
 .animated {
   -webkit-animation-duration: 1s;
   animation-duration: 1s;
@@ -15,10 +16,10 @@
 
 @keyframes fadeIn {
   from {
-      opacity: 0;
+    opacity: 0;
   }
   to {
-      opacity: 1;
+    opacity: 1;
   }
 }
 
@@ -26,6 +27,22 @@
   animation-name: fadeIn;
 }
 
-.d-block{
+.d-block {
   width: 100%;
 }
+
+#root {
+  display:flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: black;
+}
+
+/* body{
+  min-height: 100%;
+} */
+
+html{
+  height: 100%;
+}
+

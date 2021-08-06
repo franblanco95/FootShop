@@ -9,8 +9,8 @@ input[type=number]::-webkit-inner-spin-button, input[type=number]::-webkit-outer
 
 .counter-add {
   color: #fff;
-  background-color: black;
-  border-color: #0d6efd;
+  background-color: rgb(14, 14, 14);
+  border-color: white;
   display: inline-block;
   font-weight: 400;
   line-height: 1.5;
@@ -57,10 +57,10 @@ input[type=number]::-webkit-inner-spin-button, input[type=number]::-webkit-outer
   cursor: pointer;
 }
 
-.counter-button:hover {
+/* .counter-button:hover {
   background-color: #ffb400;
   border-color: #eba600;
-}
+} */
 
 .counter-button-cart {
   width: 12rem;
@@ -80,7 +80,7 @@ input[type=number]::-webkit-inner-spin-button, input[type=number]::-webkit-outer
   cursor: pointer;
 }
 
-.counter-button-cart:hover {
+/* .counter-button-cart:hover {
   background-color: #1dd098;
   border-color: #1cc08b;
-}
+} */
