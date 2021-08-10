@@ -6,20 +6,28 @@
     z-index: 10;
 }
 
-.navbar-title {
+.navbar-toggler {
+    background-color: white !important;
+    color: white !important;
+    fill: white !important;
+    margin-right: 2rem;
+}
+
+.dropdown-toggle::after, .nav-link, .navbar-title {
     display: flex;
     align-items: center;
-    justify-content: center;
     text-decoration: none;
     margin: 0 1rem;
-    text-align: center;
     font-size: 1.3rem;
     color: white !important;
     font-family: 'Lato', sans-serif;
 }
 
-.active svg,
-.active {
+.dropdown-toggle::after {
+    display: none;
+}
+
+.active svg, .nav-link:focus, .active {
     font-weight: bold;
     color: rgb(243, 186, 64) !important;
     fill: rgb(243, 186, 64) !important;

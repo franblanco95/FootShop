@@ -43,13 +43,13 @@ export const CounterComponent = ({ stock, onAdd }) => {
                     <button onClick={sumar} className="counter-add">+</button>
                 </InputGroup>
             </div>
-            <Button onClick={() => { onAdd(counter); reset() }} className="counter-button">Agregar al Carrito</Button>
+            <Button onClick={() => { onAdd(counter); reset() }} className="counter-button me-2">Agregar al Carrito</Button>
             <div className="toast-container">
                 <ToastContainer />
             </div>
 
             <Link to="/cart">
-                <Button className="counter-button-cart ms-2">Ir al Carrito</Button>
+                <Button className="counter-button-cart">Ir al Carrito</Button>
             </Link>
 
         </>

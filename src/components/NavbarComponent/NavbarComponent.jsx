@@ -1,6 +1,6 @@
 import './NavbarComponent.css'
 import { React, useContext } from 'react'
-import { Navbar, Nav } from 'react-bootstrap';
+import { Navbar, Nav, NavDropdown } from 'react-bootstrap';
 import { Link, NavLink } from 'react-router-dom';
 import { CartIcon } from '../CartIcon/CartIcon';
 import { CartContext } from '../../context/cartContext'
@@ -22,6 +22,13 @@ export const NavBar = () => {
 
                     <Nav.Link as={NavLink} className="navbar-title" exact to="/">Inicio</Nav.Link>
 
+                    <NavDropdown alignLeft title="Categorias" id="collasible-nav-dropdown">
+                        <NavDropdown.Item as={Link} to="/category/zapatillas">Zapatillas</NavDropdown.Item>
+                        <NavDropdown.Item as={Link} to="/category/zapatos">Zapatos</NavDropdown.Item>
+                        <NavDropdown.Item as={Link} to="/category/ojotas">Ojotas</NavDropdown.Item>
+                        <NavDropdown.Item as={Link} to="/category/medias">Medias</NavDropdown.Item>
+                    </NavDropdown>
+
                     <Nav.Link as={NavLink} className="navbar-title" to="/miscompras">Mis Compras</Nav.Link>
 
                     <Nav.Link as={NavLink} className="navbar-title" to="/login">Iniciar Sesion</Nav.Link>
@@ -32,7 +39,6 @@ export const NavBar = () => {
 
             </Navbar.Collapse>
         </Navbar >
-
 
     )
 }

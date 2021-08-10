@@ -16,7 +16,7 @@ export const HomeContainer = () => {
             {productos.length === 0 ?
                 (<Cargando />) :
                 <>
-                    <div className="py-5 allcategories">
+                    {/* <div className="py-5 allcategories">
 
                         <Link className="home-category" to="/category/zapatillas">Zapatillas</Link>
 
@@ -25,7 +25,7 @@ export const HomeContainer = () => {
                         <Link className="home-category" to="/category/ojotas">Ojotas</Link>
 
                         <Link className="home-category" to="/category/medias">Medias</Link>
-                    </div>
+                    </div> */}
                     <div className="allproducts">
 
                         {productos.map((element) => {

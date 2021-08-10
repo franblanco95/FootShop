@@ -36,9 +36,13 @@ export const ItemListContainer = () => {
         filtradoCategoria(categoryId, productos)
     }, [categoryId, productos]);
 
-    if (cargando) return <Cargando />
-
     return (
-        <ItemList productos={itemsFiltrados} category={categoryId} />
-    )
+        <>
+            {(cargando === true) ?
+                <Cargando /> :
+                <ItemList productos={itemsFiltrados} category={categoryId} />
+            }
+        </>)
+
+
 }
