@@ -37,7 +37,8 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: space-evenly;
-    margin: 5rem 300px 50px;
+    margin: 5rem auto;
+    width: 70%;
 
 }
 

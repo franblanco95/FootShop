@@ -29,9 +29,9 @@ export const NavBar = () => {
                         <NavDropdown.Item as={Link} to="/category/medias">Medias</NavDropdown.Item>
                     </NavDropdown>
 
-                    <Nav.Link as={NavLink} className="navbar-title" to="/miscompras">Mis Compras</Nav.Link>
+                    <Nav.Link as={NavLink} to="/miscompras">Mis Compras</Nav.Link>
 
-                    <Nav.Link as={NavLink} className="navbar-title" to="/login">Iniciar Sesion</Nav.Link>
+                    <Nav.Link as={NavLink} to="/login">Iniciar Sesion</Nav.Link>
 
                     <NavLink as={NavLink} className="navbar-title me-5" to="/cart"><CartIcon activeClassName="active" />{carrito.length === 0 ? '' : (carrito.length)}</NavLink>
 
